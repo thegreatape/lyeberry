@@ -2,31 +2,31 @@
   (:use midje.sweet)
   (:use [lyeberry.core]))
 
-(facts "about minuteman-copies"
-  (let [nonexistent-book     {:author "Nobody" :title "Doesn't Exist"}
-        multiple-copies-book {:author "Toast"  :title "Charles Stross"}]
+(def multiple-copies-book {:author "Toast"  :title "Charles Stross"})
+(def toast-html (slurp "test/lyeberry/toast-charles-stross.html"))
 
-    (fact "it returns an empty vector when no copies are present"
-          (minuteman-copies nonexistent-book) => [])
-
-    (pending-fact "it return a vector of copies"
-      (minuteman-copies multiple-copies-book)
-        => [{:title "Supermen : tales of the posthuman future"
-             :author "[edited by] Gardner Dozois"
-             :status "AVAILABLE"
-             :location "Newton"
-             :call-number "Short Stories S959D" }
-            {:title "Toast"
-             :author "Charles Stross"
-             :status "Out"
-             :location "Cambridge"
-             :call-number "SCI FIC Stross, Charles" }
-            {:title "Toast"
-             :author "Charles Stross"
-             :status "AVAILABLE"
-             :location "Newton"
-             :call-number "Fic"}
-            ] )))
+(facts "about extract-books"
+  (let [books (extract-books toast-html)]
+    (fact "it return a vector of copies"
+      books => (contains {:title "Supermen : tales of the posthuman future"
+                          :author "[edited by] Gardner Dozois"
+                          :status "AVAILABLE"
+                          :location "Newton"
+                          :url ""
+                          :call-number "Short Stories S959D" })
+      books => (contains {:title "Toast"
+                          :author "Charles Stross"
+                          :status "Out"
+                          :location "Cambridge"
+                          :url ""
+                          :call-number "SCI FIC Stross, Charles" })
+      books => (contains {:title "Toast"
+                          :author "Charles Stross"
+                          :status "AVAILABLE"
+                          :location "Newton"
+                          :url ""
+                          :call-number "Fic"})
+         )))
 
 (facts "about minuteman-search-url"
   (fact "it returns the start search url for the given book"
