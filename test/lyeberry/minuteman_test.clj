@@ -1,6 +1,6 @@
-(ns lyeberry.core-test
+(ns lyeberry.minuteman-test
   (:use midje.sweet)
-  (:use [lyeberry.core]))
+  (:use [lyeberry.minuteman]))
 
 (def multiple-copies-book {:author "Toast"  :title "Charles Stross"})
 (def toast-html (slurp "test/lyeberry/toast-charles-stross.html"))
@@ -28,7 +28,7 @@
                           :call-number "Fic"})
          )))
 
-(facts "about minuteman-search-url"
+(facts "about search-url"
   (fact "it returns the start search url for the given book"
-    (minuteman-search-url {:title "Toast" :author "Charles Stross"})
+    (search-url {:title "Toast" :author "Charles Stross"})
       => "https://find.minlib.net/iii/encore/search/C__Stoast%20charles%20stross__Orightresult__U?lang=eng&suite=cobalt"))
