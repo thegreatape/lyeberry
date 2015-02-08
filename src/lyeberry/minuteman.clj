@@ -14,7 +14,10 @@
 
 (defn text-of
   [node]
-  (clojure.string/trim (html/text node)))
+  (clojure.string/replace 
+    (clojure.string/trim (html/text node))
+    #"\s+"
+    " "))
 
 (defn copies-from-book-node
   [book-node]
