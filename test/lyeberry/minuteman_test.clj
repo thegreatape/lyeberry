@@ -13,19 +13,19 @@
                           :status "AVAILABLE"
                           :location "Newton"
                           :url ""
-                          :call-number "Short Stories S959D" })
+                          :call_number "Short Stories S959D" })
       books => (contains {:title "Toast"
                           :author "Charles Stross"
                           :status "Out"
                           :location "Cambridge"
                           :url ""
-                          :call-number "SCI FIC Stross, Charles" })
+                          :call_number "SCI FIC Stross, Charles" })
       books => (contains {:title "Toast"
                           :author "Charles Stross"
                           :status "AVAILABLE"
                           :location "Newton"
                           :url ""
-                          :call-number "Fic"})
+                          :call_number "Fic"})
          )))
 
 (facts "about search-url"

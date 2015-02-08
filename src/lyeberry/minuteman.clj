@@ -24,7 +24,7 @@
           :when (not (is-header? row)) ]
       {:location    (clojure.string/capitalize
                       (clojure.string/replace (text-of (nth cells 0)) #"/.*" ""))
-       :call-number (text-of (nth cells 1))
+       :call_number (text-of (nth cells 1))
        :status      (text-of (nth cells 2))
        :url         "" })))
 
