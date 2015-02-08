@@ -4,6 +4,7 @@
         [ring.middleware.json :only [wrap-json-response]])
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
+            [ring.adapter.jetty :as jetty]
             [lyeberry.minuteman :as minuteman]))
 
 (def fetchers
@@ -25,4 +26,9 @@
       (wrap-params)
       (wrap-json-response)))
 
+(defn start [port]
+  (jetty/run-jetty app {:port port :join? false}))
 
+(defn -main []
+  (let [port (Integer. (or (System/getenv "PORT") "8080"))]
+    (start port)))

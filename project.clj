@@ -9,5 +9,8 @@
                  [ring/ring-jetty-adapter "1.3.2"]]
   :plugins [[lein-ring "0.8.11"]]
   :ring {:handler lyeberry.core/app}
-  :profiles {:dev {:dependencies [[midje "1.5.1"]]}})
+  :profiles {:dev     {:dependencies [[midje "1.5.1"]]}
+             :uberjar {:aot :all}}
+  :min-lein-version "2.5.0"
+  :main lyeberry.core)
 
