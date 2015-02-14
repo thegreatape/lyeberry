@@ -5,10 +5,13 @@
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.adapter.jetty :as jetty]
-            [lyeberry.minuteman :as minuteman]))
+            [lyeberry.minuteman :as minuteman]
+            [lyeberry.overdrive :as overdrive]))
 
 (def fetchers
-  { "minuteman" minuteman/copies })
+  { "minuteman" minuteman/copies
+    "bpl-overdrive" overdrive/bpl-copies
+    "minuteman-overdrive" overdrive/minuteman-copies })
 
 (defroutes app-routes
   (GET "/systems/:id/books" [id title author]

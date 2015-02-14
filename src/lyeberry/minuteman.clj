@@ -1,23 +1,11 @@
 (ns lyeberry.minuteman
+  (:use lyeberry.html-utils)
   (:require [net.cgrand.enlive-html :as html]
             [clj-http.client :as client]))
-
-(defn text-at
-  [node selector]
-  (clojure.string/trim
-       (first (html/texts
-                (html/select node #{selector})))))
 
 (defn is-header?
   [row]
   (not-empty (html/select row #{[:th]})))
-
-(defn text-of
-  [node]
-  (clojure.string/replace 
-    (clojure.string/trim (html/text node))
-    #"\s+"
-    " "))
 
 (defn copies-from-book-node
   [book-node]
@@ -42,7 +30,7 @@
 
 (defn extract-books
   [page-html]
-  (flatten 
+  (flatten
     (map extract-copies (-> page-html
                             (java.io.StringReader.)
                             (html/html-resource)
