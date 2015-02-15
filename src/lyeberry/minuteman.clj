@@ -31,18 +31,14 @@
 (defn extract-books
   [page-html]
   (flatten
-    (map extract-copies (-> page-html
-                            (java.io.StringReader.)
-                            (html/html-resource)
-                            (html/select #{[:.searchResult]})))))
+    (map extract-copies
+         (select-from-html-string page-html [:.searchResult]))))
 
 (defn search-url
   [book]
    (str
      "https://find.minlib.net/iii/encore/search/C__S"
-     (-> (str (:title book) " " (:author book))
-         clojure.string/lower-case
-         client/url-encode-illegal-characters)
+     (url-encode-book book)
      "__Orightresult__U?lang=eng&suite=cobalt"))
 
 (defn copies

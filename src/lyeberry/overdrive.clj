@@ -49,11 +49,7 @@
 
 (defn extract-books
   [page-html]
-  (map extract-copy
-       (-> page-html
-           (java.io.StringReader.)
-           (html/html-resource)
-           (html/select #{[:.searchResultRow]}))))
+  (map extract-copy (select-from-html-string page-html [:.searchResultRow])))
 
 (defn copies
   [host book]

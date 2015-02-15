@@ -6,12 +6,14 @@
             [compojure.route :as route]
             [ring.adapter.jetty :as jetty]
             [lyeberry.minuteman :as minuteman]
-            [lyeberry.overdrive :as overdrive]))
+            [lyeberry.overdrive :as overdrive]
+            [lyeberry.boston :as boston]))
 
 (def fetchers
   { "minuteman" minuteman/copies
     "bpl-overdrive" overdrive/bpl-copies
-    "minuteman-overdrive" overdrive/minuteman-copies })
+    "minuteman-overdrive" overdrive/minuteman-copies
+    "boston" boston/copies })
 
 (defroutes app-routes
   (GET "/systems/:id/books" [id title author]
