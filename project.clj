@@ -13,5 +13,5 @@
   :profiles {:dev     {:dependencies [[midje "1.5.1"]]}
              :uberjar {:aot :all}}
   :min-lein-version "2.5.0"
-  :main lyeberry.core)
+  :uberjar-name "lyeberry.jar")
 
