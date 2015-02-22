@@ -6,7 +6,8 @@
                  [ring/ring-core "1.3.2"]
                  [ring/ring-json "0.3.1"]
                  [compojure "1.3.1"]
-                 [ring/ring-jetty-adapter "1.3.2"]]
+                 [ring/ring-jetty-adapter "1.3.2"]
+                 [thegreatape/ring-raygun "0.1.0"]]
   :plugins [[lein-ring "0.8.11"]]
   :ring {:handler lyeberry.core/app}
   :profiles {:dev     {:dependencies [[midje "1.5.1"]]}

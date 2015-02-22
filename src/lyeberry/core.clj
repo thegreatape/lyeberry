@@ -7,7 +7,8 @@
             [ring.adapter.jetty :as jetty]
             [lyeberry.minuteman :as minuteman]
             [lyeberry.overdrive :as overdrive]
-            [lyeberry.boston :as boston]))
+            [lyeberry.boston :as boston]
+            [ring.middleware.raygun :refer [wrap-raygun-handler]]))
 
 (def fetchers
   { "minuteman" minuteman/copies
@@ -29,6 +30,7 @@
 (def app
   (-> app-routes
       (wrap-params)
+      (wrap-raygun-handler (System/getenv "RAYGUN_APIKEY"))
       (wrap-json-response)))
 
 (defn start [port]
