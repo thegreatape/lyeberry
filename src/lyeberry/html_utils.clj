@@ -18,6 +18,7 @@
 (defn url-encode-book
   [book]
   (-> (str (:title book) " " (:author book))
+      (clojure.string/replace "%" "")
       clojure.string/lower-case
       client/url-encode-illegal-characters))
 
