@@ -14,7 +14,8 @@
   { "minuteman" minuteman/copies
     "bpl-overdrive" overdrive/bpl-copies
     "minuteman-overdrive" overdrive/minuteman-copies
-    "boston" boston/copies })
+    "boston" boston/copies
+    "explode" (fn [b] (throw (Exception. "oh no")))})
 
 (defroutes app-routes
   (GET "/systems/:id/books" [id title author]
@@ -27,11 +28,21 @@
 
   (route/not-found "Route not found"))
 
+(defn wrap-token-auth
+  [handler authorized-token]
+  (fn [request]
+    (let [token (get-in request [:params "token"])]
+      (if (= authorized-token token)
+        (handler request)
+        {:status 401 :body "Unauthorized"}))))
+
 (def app
   (-> app-routes
-      (wrap-params)
       (wrap-raygun-handler (System/getenv "RAYGUN_APIKEY"))
-      (wrap-json-response)))
+      (wrap-json-response)
+      (wrap-token-auth (System/getenv "AUTH_TOKEN"))
+      (wrap-params)
+      ))
 
 (defn start [port]
   (jetty/run-jetty app {:port port :join? false}))

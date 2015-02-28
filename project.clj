@@ -5,6 +5,7 @@
                  [clj-http "1.0.1"]
                  [ring/ring-core "1.3.2"]
                  [ring/ring-json "0.3.1"]
+                 [ring/ring-mock "0.2.0"]
                  [compojure "1.3.1"]
                  [ring/ring-jetty-adapter "1.3.2"]
                  [thegreatape/ring-raygun "0.1.0"]]
