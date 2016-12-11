@@ -1,0 +1,2962 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=1">
+        
+        <script type='text/javascript'>window.NREUM||(NREUM={});NREUM.info = {"agent":"","beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a0d9447a2a","applicationID":"11237777,26520591","applicationTime":98.37426,"transactionName":"YgQGZUtVDRcDBkULDFtOIUlJRgYXEQ9CTSRwNUseSlECFgEN","queueTime":0,"ttGuid":"7b6a29d76f4b74","agentToken":null}; (window.NREUM||(NREUM={})).loader_config={xpid:"Uw8AUlNXGwIBVlJVAAYA"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+        
+        
+        <title>
+    
+        Search Results for cold days jim butcher
+    
+ - Minuteman Library Network</title>
+
+        <script>
+            // Bootstrap data to frontend
+            window.OverDrive = window.OverDrive || {};
+            window.OverDrive.tenant = 410;
+            window.OverDrive.allFeatures = "";
+            window.OverDrive.libraryConfigurations = {"autocomplete":{"enabled":true},"recommend-to-library":{"enabled":true},"advantage":{"enabled":true}};
+            window.OverDrive.goback = "";
+            window.OverDrive.mediaItems = {"1045267":{"firstCreatorId":161804,"isOwned":true,"isHoldable":true,"isRecommendableToLibrary":true,"isPreReleaseTitle":false,"isAvailable":true,"sample":{"href":"https://samples.overdrive.com/?crid=D5E534CB-A7E1-4897-BC2E-90EBA8A3A981&.epub-sample.overdrive.com"},"publisher":{"name":"Penguin Publishing Group","id":"97289"},"type":{"name":"eBook","id":"ebook"},"covers":{"cover150Wide":{"primaryColor":{"rgb":{"blue":94,"green":65,"red":50},"hex":"#32415E"},"width":150,"height":200,"href":"https://img1.od-cdn.com/ImageType-150/1523-1/D5E/534/CB/{D5E534CB-A7E1-4897-BC2E-90EBA8A3A981}Img150.jpg"},"cover300Wide":{"primaryColor":{"rgb":{"blue":102,"green":73,"red":58},"hex":"#3A4966"},"width":300,"height":400,"href":"https://img1.od-cdn.com/ImageType-400/1523-1/D5E/534/CB/{D5E534CB-A7E1-4897-BC2E-90EBA8A3A981}Img400.jpg"},"cover510Wide":{"primaryColor":{"rgb":{"blue":96,"green":67,"red":52},"hex":"#344360"},"width":510,"height":680,"href":"https://img2.od-cdn.com/ImageType-100/1523-1/{D5E534CB-A7E1-4897-BC2E-90EBA8A3A981}Img100.jpg"}},"id":"1045267","firstCreatorName":"Jim Butcher","title":"Cold Days","starRating":4.6,"starRatingCount":477,"holdsRatio":0,"holdsCount":0,"ownedCopies":3,"availableCopies":2,"estimatedReleaseDate":"2012-11-27T05:00:00Z","availabilityType":"normal","description":"<b>HARRY DRESDEN LIVES!!!<br></b> <br>After being murdered by a mystery assailant, navigating his way through the realm between life and death, and being brought back to the mortal world, Harry realizes that maybe death wasn't all that bad....","series":"The Dresden Files","subtitle":"The Dresden Files Series, Book 14"}};
+            window.OverDrive.thunderHost = "https://thunder-api-us-east1.overdrive.com/v2";
+            window.patronSettings = "";
+            window.OverDrive.isAuthenticated = false;
+            window.OverDrive.authType = "no-auth";
+            window.OverDrive.currentRoom = false;
+            window.OverDrive.cdn = 'https://lightning.od-cdn.com/8.2.0.453-hotfix';
+            window.OverDrive.features = {"list-view":{"enabled":true,"testable":true},"advantage":{"enabled":true,"testable":true},"wishlist-availability":{"enabled":true,"testable":true},"advanced-search":{"enabled":true,"testable":true},"reverse-preview":{},"audience-setting":{"enabled":true,"testable":true},"lending-period-settings":{"enabled":true,"testable":true},"star-ratings":{"enabled":true,"testable":true},"account-ratings":{"enabled":false,"testable":true},"recommend-to-library":{"enabled":true,"testable":true},"autocomplete":{"enabled":true,"testable":true},"diagnostics-endpoint":{"enabled":true,"testable":true},"localization":{"enabled":true,"testable":true},"rooms":{"enabled":true,"testable":true},"patron-title-status":{"enabled":true,"testable":true},"rtl-preview":{"enabled":true,"testable":true},"premium-reviews":{"enabled":true,"testable":true},"redis-cache":{"enabled":true,"_comment":"this feature cannot be testable, and cannot use the featureManager"},"details-recommendations":{"enabled":true,"testable":true}};
+            window.OverDrive.languageSelection = "undefined";
+            window.OverDrive.features.isDisabled = function(feature){
+                return !(window.OverDrive.features[feature] && window.OverDrive.features[feature].enabled);
+            };
+            window.OverDrive.isLocal = false;
+
+            // register routing
+            window.OverDrive._baseUrl = '';
+
+            // register i18n
+            window.OverDrive._locale = 'en';
+        </script>
+
+        <style>
+            @font-face {
+                font-family: 'freight-text-book';
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/freight-book.eot?1326c7e8f4");
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/freight-book.eot?#iefix") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/freight-book.woff2?24a0e147d4") format('woff2'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/freight-book.woff?abd20364ba") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/freight-book.ttf?9254a75afb") format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'proxima-nova';
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-regular.eot?d01daeee1a");
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-regular.eot?#iefix") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-regular.svg#proxima-nova") format('svg'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-regular.woff2?3c5660cd36") format('woff2'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-regular.woff?4d82912214") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-regular.ttf?aeb572c048") format('truetype');
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'proxima-nova';
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-semibold.eot?828d9d8d80");
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-semibold.eot?#iefix") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-semibold.svg#proxima-nova") format('svg'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-semibold.woff2?078c7c7acb") format('woff2'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-semibold.woff?b9a6bd50ad") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/proximanova-semibold.ttf?470d9686a3") format('truetype');
+                font-weight: 800;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'open-dyslexic';
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/open-dyslexic.eot?9a00b90c2f");
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/open-dyslexic.eot?#iefix") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/open-dyslexic.woff2?86f1c298a8") format('woff2'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/open-dyslexic.woff?f4f03699d1") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/open-dyslexic.ttf?ad040dbe61") format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'icons';
+                src:url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/Icons/icons.eot?1ade508325");
+                src:url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/Icons/icons.eot?1ade508325") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/Icons/icons.woff?42f7a679d9") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/Icons/icons.ttf?3728566778") format('truetype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/Icons/icons.svg?681231071f") format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family:'room-kids-1';
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/kids.eot?6d54171559");
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/kids.eot?#iefix") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/kids.woff?676e56c0d0") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/kids.ttf?789805342b") format('truetype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/kids.svg#kids") format('svg');
+                font-weight: 400;
+                font-style: normal;
+                font-stretch: normal;
+                unicode-range: U+0020-FB02;
+            }
+
+            @font-face {
+                font-family:'room-newsstand-1';
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/newsstand.eot?f33285aa50");
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/newsstand.eot?#iefix") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/newsstand.woff?7d66e93528") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/newsstand.ttf?45e5ed767a") format('truetype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/newsstand.svg#newsstand") format('svg');
+                font-weight: 400;
+                font-style: normal;
+                font-stretch: normal;
+                unicode-range: U+000D-FB02;
+            }
+
+            @font-face {
+                font-family:'room-teens-1';
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.eot?59bf1e3fd8");
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.eot?#iefix") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.woff?0d261c785b") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.ttf?bde5af0ebc") format('truetype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.svg#teens") format('svg');
+                font-weight: 400;
+                font-style: normal;
+                font-stretch: normal;
+                unicode-range: U+0020-FB02;
+            }
+
+            @font-face {
+                font-family:'room-kids-teens-1';
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.eot?59bf1e3fd8");
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.eot?#iefix") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.woff?0d261c785b") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.ttf?bde5af0ebc") format('truetype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/teens.svg#teens") format('svg');
+                font-weight: 400;
+                font-style: normal;
+                font-stretch: normal;
+                unicode-range: U+0020-FB02;
+            }
+
+            @font-face {
+                font-family:'room-screening-1';
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/screening.eot?bd637a4b88");
+                src: url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/screening.eot?#iefix") format('embedded-opentype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/screening.woff?9f3718677c") format('woff'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/screening.ttf?3c5e71a73c") format('truetype'),
+                url("https://lightning.od-cdn.com/8.2.0.453-hotfix/public/fonts/rooms/screening.svg#screening") format('svg');
+                font-weight: 400;
+                font-style: normal;
+                font-stretch: normal;
+                unicode-range: U+0020-FB04;
+            }
+
+            img.broken {
+                background-image: url(https://lightning.od-cdn.com/8.2.0.453-hotfix/public/img/loading.gif?aae63449b3) !important;
+            }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/css/css-bundle.css?df6c79f1f1" />
+
+        
+    <link rel="stylesheet" type="text/css" href="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/css/faceted-media.min.css?2e9ada7ef4" />
+
+
+        
+        
+        
+
+<style>
+    
+
+    .primary-color {
+        color:#7680af !important;
+    }
+
+    .Hero {
+        background:#7680af !important;
+    }
+
+    .Campaign {
+        background:#7680af !important;
+    }
+
+    .TitleDetailsDescription-infoTab.is-active {
+        border-bottom:3px solid #7680af;
+    }
+
+    .TitleDetailsDescription-infoTab.is-active .TitleDetailsDescription-infoTabLink {
+         color:#7680af;
+    }
+
+    .TitleDetailsDescription-infoTab:hover .TitleDetailsDescription-infoTabLink {
+        color:#47548f;
+    }
+
+    .button.place-a-hold.Button-holdButton, .Button-recommend {
+        background:#47548f !important;
+        border: 2px solid #47548f !important;
+    }
+
+    .button.place-a-hold.Button-holdButton:hover, .Button-recommend:hover {
+        background:rgb(61, 74, 133) !important;
+        border: 2px solid rgb(61, 74, 133);
+    }
+
+    .AccountPageMenu-tabListItem {
+        border-color: #7680af !important;
+    }
+
+    .AccountPageMenu-tab.is-active {
+        color: #7680af;
+    }
+
+    .AccountPageMenu-tab.is-active:hover {
+        border-color: #47548f !important;
+    }
+
+    .primary-background-color {
+        background-color:#7680af !important;
+    }
+
+    .primary-color-hover:hover {
+        color:#7680af!important;
+    }
+
+    .primary-background-hover:hover {
+        background:#7680af!important;
+    }
+
+    .primary-background-color-hover:hover {
+        background-color:#7680af!important;
+    }
+
+    .primary-color-focus:focus {
+        color:#7680af!important;
+    }
+
+    .primary-background-focus:focus {
+        background:#7680af!important;
+    }
+
+    .primary-background-color-focus:focus {
+        background-color:#7680af!important;
+    }
+
+    .secondary-color {
+        color:#47548f !important;
+    }
+
+    .secondary-background {
+        background:#47548f !important;
+    }
+
+    .secondary-background {
+        background:#47548f !important;
+    }
+
+    .secondary-color-hover:hover {
+        color:#47548f!important;
+    }
+
+    .secondary-background-hover:hover {
+        background:#47548f!important;
+    }
+
+    .secondary-background-color-hover:hover {
+        color:#47548f!important;
+    }
+
+    .secondary-color-focus:focus {
+        color:#47548f!important;
+    }
+
+    .secondary-background-focus:focus {
+        background:#47548f!important;
+    }
+
+    .secondary-background-color-focus:focus {
+        background-color:#47548f!important;
+    }
+
+    .secondary-border-color {
+        border-color: #47548f!important;
+    }
+
+    .secondary-hover-underline {
+        color: #47548f !important;
+    }
+
+    .secondary-hover-underline:hover {
+        color: #47548f !important;
+        text-decoration: underline;
+    }
+
+    a {
+        color:#7680af;
+    }
+
+    a:hover, a:focus {
+        color:#47548f;
+    }
+
+    .button.secondary {
+        background-color:#47548f;
+    }
+
+    .button.primary {
+        background-color:#7680af;
+    }
+
+    .button.primary:focus, .button.primary:hover {
+        background-color:rgb(108, 118, 165);
+    }
+
+    .button.secondary:focus, .button.secondary:hover {
+        background-color:rgb(61, 74, 133);
+    }
+
+    .button.outline {
+        border:2px solid #7680af;
+        color:#7680af;
+    }
+
+    .button.outline:hover {
+        background:#7680af;
+    }
+
+    .button.outline:focus {
+        background:#7680af;
+    }
+
+    .button.no-outline {
+        color:#7680af;
+    }
+
+    .button.no-outline:hover {
+        color:white;
+        background:#7680af;
+    }
+
+    .button.no-mobile-hover:not(.Facets-showMobileFacets) {
+        color:#7680af !important;
+        background:transparent !important;
+    }
+
+    .SettingsPage-checkbox:checked .SettingsPage-settingsLabel.is-checkbox:before {
+        color: #47548f;
+    }
+
+    .RecommendModal-inputLabel:before:checked {
+        color: #47548f;
+    }
+
+    input.check[type=radio]:checked+label:before {
+        color:#47548f;
+    }
+
+    
+
+
+    
+
+
+    
+
+
+    .nav-container {
+        border-top:4px solid #47548f;
+        background-color:#fff;
+    }
+
+    .BrowseFormats .BrowseFormats-link:hover {
+        color:#47548f !important;
+    }
+
+    .BrowseFormats .BrowseFormats-link.is-active {
+        border-bottom: 3px solid #7680af !important;
+        color: #7680af !important;
+    }
+
+    .BrowseSubjects .BrowseSubjects-link:hover {
+        color: #47548f !important;
+    }
+
+    a.sign-in, a.sign-in-mobile {
+        background:#47548f !important;
+    }
+
+    .MobileNav-advantageToutSignin {
+        background:#47548f !important;
+    }
+
+    a.sign-in:hover, a.sign-in-mobile:hover {
+        background:rgb(61, 74, 133) !important;
+    }
+
+    .MobileNav-advantageToutSignin:hover {
+        background:rgb(61, 74, 133) !important;
+    }
+
+    .icon-account.expanded {
+        color:#47548f!important;
+    }
+
+    .no-js .top-bar-section ul li:hover>a, .top-bar-section li:not(.has-form) a:not(.button):hover {
+        color:#47548f;
+    }
+
+    .top-bar-section .dropdown li:not(.has-form):not(.active):hover>a:not(.button), .top-bar-section .dropdown li:not(.has-form):not(.active)>a:not(.button):hover {
+        color:#7680af;
+    }
+
+    .content.f-dropdown div li h2, .content.f-dropdown div h2 {
+        color:#7680af
+    }
+
+    .content.f-dropdown div li span a, .content.f-dropdown div span a {
+        color:#47548f
+    }
+
+    .accordion-navigation.active a {
+        color:#47548f;
+    }
+
+    .content.active ul li a:hover{
+        color:#47548f!important;
+    }
+
+    .top-bar.expanded .toggle-topbar.menu-icon {
+        color: #47548f;
+    }
+
+    nav.top-bar li.search-icon i.expanded {
+        color: #47548f;
+    }
+
+    .top-bar.expanded .toggle-topbar.browse a{
+        color:#47548f;
+    }
+
+    ul.account-menu li.active a {
+        color: #7680af;
+    }
+
+    ul#lending-period-options.f-dropdown li a:hover, ul#lending-period-options-mobile.f-dropdown li a:hover, ul#lending-period-options.f-dropdown li a:after, ul#lending-period-options-mobile.f-dropdown li a:after {
+        color:#47548f;
+    }
+
+    ul.pagination li.current a, ul.pagination li.current button {
+        color:#7680af;
+        border:2px solid #7680af;
+    }
+
+    ul.pagination li.current a:focus, ul.pagination li.current a:hover, ul.pagination li.current button:focus, ul.pagination li.current button:hover {
+        background:#7680af;
+    }
+
+    .Toaster-toast:not(.is-burnt) {
+        background-color:#47548f;
+    }
+
+    div.skip-links {
+        background-color: #47548f;
+    }
+
+    .title .more-actions {
+        border:2px solid #47548f !important;
+    }
+
+    .title .more-actions:not(.no-color):hover, .title .more-actions.open:not(.no-color) {
+        background:#47548f !important;
+    }
+
+    .title-container .title-contents .more-actions {
+        border-color: #47548f !important;
+    }
+
+    .title-container .title-contents .more-actions.open:not(.no-color) {
+        background: #47548f !important;
+    }
+
+    .media-container.list-view ul li .title-container .title-contents .title-header-bar.available-title a {
+        color: #FFF !important;
+        background: #47548f !important;
+    }
+
+    .media-container.list-view ul li .title-container div.title-description a.expand-description {
+        color:#47548f;
+    }
+
+    .media-container.list-view ul li .title-container div.title-description a.expand-description:hover {
+        color:rgb(61, 74, 133) !important;
+    }
+
+    .media-container.list-view .more-actions:hover i:before, .media-container.list-view .more-actions:focus i:before, .more-actions-container.holds .more-actions:hover i:before, .more-actions-container.holds .more-actions:focus i:before, .more-actions-container.holds .more-actions.open i:before {
+        color: #47548f !important;
+    }
+
+    a.view-as-grid, a.view-as-grid:hover, a.view-as-grid:focus, a.view-as-list, a.view-as-list:hover, a.view-as-list:focus a.view-as-grid i:not(.gray), a.view-as-grid:hover i:not(.gray), a.view-as-grid:focus i:not(.gray), a.view-as-list i:not(.gray), a.view-as-list:hover i:not(.gray), a.view-as-list:focus i:not(.gray) {
+        color: #47548f !important;
+    }
+
+    .mobile-nav-wrapper .mobile-nav-menu ul li a:not(#account-nav-heading):not(#featured-collections-heading):not(#account-heading):not(#language-accordion-heading):not(.sign-in-mobile):hover {
+        color: #47548f;
+    }
+
+    .accordion-navigation .content a li:hover {
+        color: #47548f
+    }
+
+    .library-card-sign-up a:hover {
+        color: #7680af;
+    }
+
+    li.collection-link:hover i, a.view-all-collections:hover i {
+        color: #7680af !important;
+    }
+
+    div#main ul li a.subject-link:hover {
+        color: #47548f;
+    }
+
+    [disabled].secondary {
+        background: #47548f !important;
+    }
+
+    [disabled].primary {
+        background: #7680af !important;
+    }
+
+    span.selected, span.selected:hover {
+        border-color:#47548f;
+    }
+
+    .collection-link.primary-color-hover:hover span.selected {
+        border-color:#7680af
+    }
+
+    p .read-more-link {
+        -webkit-box-shadow: -4px 0 3px #7680af;
+        -moz-box-shadow: -4px 0 3px #7680af;
+        box-shadow: -4px 0 3px #7680af;
+    }
+
+    p.title-name a:hover {
+        color:#7680af;
+    }
+
+    .star-ratings-container.user-rating .icon-star:before {
+        color: #7680af;
+    }
+
+    .languageLinkCheckbox {
+        color: #7680af;
+    }
+    
+    .RTLSearchWarning-dismiss {
+        color: #47548f;
+    }
+
+    .Autocompletions .Autocompletions-item.is-active {
+        border-left: solid 2px #47548f !important;
+    }
+
+    .Pagination-itemContainer.is-current .Pagination-item {
+        border: 2px solid #7680af !important;
+        color: #7680af !important;
+    }
+
+    .Facets-sectionListItem:hover .Facets-sectionListItemLink {
+        color: #47548f;
+    }
+
+    .Nav-searchIcon--desktop.is-selected {
+        border-bottom: 2px solid #47548f;
+    }
+
+    .TitleDetailsDescription-reviewReadMore {
+        color: #47548f;
+    }
+
+    .TitleDetailsDescription-reviewReadMore:hover {
+        color:rgb(61, 74, 133) !important;
+    }
+
+    .WishlistToggle-item, .AccountRecommendations-toggleItem {
+        color: #7680af;
+    }
+
+    .WishlistToggle-item:hover, .AccountRecommendations-toggleItem:hover {
+        color: #47548f;
+    }
+
+    .WishlistToggle-item.is-active, .AccountRecommendations-toggleItem.is-active {
+        border-bottom-color: #7680af;
+    }
+
+    .WishlistToggle-item.is-active:hover, .AccountRecommendations-toggleItem.is-active:hover {
+        border-bottom-color: #47548f;
+    }
+
+    
+    .Nav-signInWrapper:hover .Nav-signIn {
+        color: #FFF !important;
+        background: rgb(61, 74, 133) !important;
+    }
+
+    .Nav-collectionsLink:hover .Nav-collectionsDropArrow, .Nav-myAccount--desktop:hover .Nav-accountDropArrow {
+        color: #47548f !important;
+    }
+
+    .Nav-collectionsDropLink.open .Nav-collectionsDropArrow {
+        color: #47548f !important;
+    }
+
+    @media only screen and (max-width:640px) {
+        .Hero-overlay {
+            background:#7680af !important;
+        }
+    }
+
+    .Nav-room-logo--desktop, .MobileNav-roomLibraryName {
+        color: #47548f !important;
+    }
+    
+</style>
+
+
+        <!-- include only base library scripts in the head needed for all functionality -->
+        
+            <script type="application/javascript">
+            if(!(typeof Intl !== 'undefined' && Intl.DateTimeFormat && Intl.NumberFormat)) {
+                var head = document.getElementsByTagName('head')[0];
+                var js = document.createElement("script");
+                js.type = "text/javascript";
+                js.src = "https://lightning.od-cdn.com/8.2.0.453-hotfix/public/js/locale-data/en.js?b5256f25ca";
+                head.appendChild(js);
+            }
+            </script>
+        
+        <script src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/js/bundles/vendor.js?2b84a87362" type="text/javascript"></script>
+
+        
+    </head>
+
+    <body class=" ">
+        
+            <script>
+                dataLayer = [{
+                    'libraryId': '410',
+                    'libraryName': 'Minuteman Library Network',
+                    'environment': '',
+                    'viewId': '104665209',
+                    'propertyId': 'UA-34791607-21',
+                    
+                }];
+            </script>
+
+            <!-- Google Tag Manager -->
+            <noscript>
+                <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NRMQ5Q"
+                        height="0"
+                        width="0"
+                        class="GTM">
+                </iframe>
+            </noscript>
+
+            <script>
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-NRMQ5Q');
+            </script>
+            <!-- End Google Tag Manager -->
+
+            
+        
+
+        
+            
+        
+
+        <div class="js-skipLinksContainer">
+            <div class="SkipLinks js-skipLinks skip-links" tabindex="0">
+                
+    
+                <a tabindex="-1" class="skip-link" role="link" href="#main" aria-label="Skip to main content">Skip to main content</a>
+                <a tabindex="-1" class="skip-link" role="link" href="#footer" aria-label="Skip to footer">Skip to footer</a>
+                
+    <a class="skip-link" href="#facets" aria-label="Skip to filters" role="link">Skip to filters</a>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <input type="hidden" id="csrf" name="_csrf" value="QtnDipQ7-lybExw98A4nsabbe8ZKZCD6L3-4">
+            <div role="dialog" id="sample-dynamic-modal" class="sample-modal reveal-modal large" data-reveal aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-header">
+        <h1 data-first-focus tabindex="0" class="primary-color modal-title js-first-focus" data-sample-title></h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <iframe id="sample-dynamic-iframe" data-src></iframe>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="javascript:void(0);" tabindex="0" role="button" aria-label="Close">&#215;</a>
+</div>
+            <!-- IE9 Warning Modal -->
+<div id="ie9-warning-modal" class="ie9-warning-modal reveal-modal small" data-reveal aria-hidden="true" >
+    <div class="modal-header">
+        <h1 class="modal-title primary-color" id="ie9-warning-modal-title"><b>For the best user experience, upgrade your browser.</b></h1>
+    </div>
+
+    <div class="modal-container" role="dialog"  aria-describedby="ie9-warning-modal-label">
+        <p id="ie9-warning-modal-label" tabindex="0" data-first-focus class="js-first-focus">
+            <br/>
+            Thanks for visiting! This site makes use of some web technologies not supported by Internet Explorer 9. To optimize your experience, please <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">upgrade your browser.</a> If you prefer, you can use a different browser such as <a href="https://www.mozilla.org">Firefox</a>, <a href="https://www.google.com/chrome">Chrome</a>, or <a href="http://www.apple.com/safari/">Safari</a>.
+            <br/><br/>
+            <a data-cancel>Continue without upgrading your browser.</a>
+            <br/><br/>
+            <span class="browser-warning-note">Note: By continuing without upgrading, the site will not render properly. You will not be prompted again until your browser is restarted.</span>
+        </p>
+        <div class="button-container">
+            <button type="button" data-cancel class="button radius margin-small outline gray cancel" id="cancel-button">Close</button>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="" aria-label="Close" role="button" tabindex="0">&#215;</a>
+</div>
+
+            
+    <script src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/js/app/faceted-media.js?f86a73e24c"></script>
+
+    <script>
+    function showAltLogoMobile() {
+        $('.js-mobileLibraryLogo').hide();
+        $('.js-altLibraryLink').show().css('display', 'inline-block');
+
+        $('.icon-account').addClass('alt-logo');
+    }
+
+    function showAltLogoDesktop() {
+        $('h1#logo-desktop').hide();
+        $('.library-home-alt-link-desktop').removeClass('hideMeImportant');
+    }
+</script>
+
+<nav>
+    <div class="MobileNav js-mobileNav">
+        <div class="row js-toggleRow">
+            <div class="columns small-12 MobileNav-logoContainer">
+                
+                    <a href="/" tabindex="2">
+                        <img class="MobileNav-libraryLogo js-mobileLibraryLogo" alt="Logo for Minuteman Library Network" src="https://thunder.cdn.overdrive.com/logo-resized/1758?1468858745"/>
+                    </a>
+                    <a class="MobileNav-altLibraryLink js-altLibraryLink u-hideMe" href="/" tabindex="2">
+                        Minuteman Library Network
+                    </a>
+                
+            </div>
+        </div>
+        <div class="row js-toggleRow">
+            <div class="columns small-12 MobileNav-searchContainer js-mobileSearchContainer">
+                <span class="MobileNav-searchIconContainer left">
+                    <i class="icon-search-nav js-doQuickSearch MobileNav-searchIcon"></i>
+                </span>
+                <form class="js-quickSearchForm js-mobileSearchForm MobileNav-searchForm is-unexpanded" id="search-form-mobile"
+                   autocomplete="off" method="get" action="/search">
+                    <label class="hideMeImportant" for="nav-search-mobile">Search</label>
+
+                    <input type="text" maxlength="100" name="query" id="nav-search-mobile" autocomplete="off"
+                           data-search="nav-search-mobile" placeholder="Search" title="Search"
+                           class="js-quickSearchInput js-mobileSearchInput MobileNav-searchInput" value="cold days jim butcher" aria-haspopup="true" />
+                </form>
+                <span class="right js-searchControlContainer u-hideMe MobileNav-searchControlContainer">
+                    <i class="icon-clear js-clearMobileSearch MobileNav-clearSearchIcon " tabindex="2" aria-label="Clear search"></i>
+                    <a class="js-doQuickSearch u-allCaps MobileNav-submitSearch" href="javascript:void(0)" tabindex="3">Search</a>
+                </span>
+                <span class="right MobileNav-iconContainer js-mobileNavIconContainer">
+                    <a href="/account/loans" aria-label="Loans" tabindex="2" class="MobileNav-bookshelfLink">
+                        <i class="icon-bookshelf MobileNav-bookshelfIcon" aria-hidden="true"></i>
+                    </a>
+                    <a class="js-mobileMenu MobileNav-accountMenu" id="hamburger" aria-expanded="false" href="javascript:void(0)"
+                       aria-label="Browse menu" title="Browse menu" tabindex="3">
+                        <i class="icon-hamburger MobileNav-hamburgerIcon" aria-hidden="true"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <div class="js-quickSearchAutocompletionsMobile"></div>
+
+        
+            <div class="MobileNav-advancedSearchContainer js-advancedSearchContainer row u-hideMe js-toggleRow">
+                <a class="MobileNav-advancedSearchText js-advancedSearchLink" id="mobileAdvancedSearch" href="/advanced-search" tabindex="1" aria-live="polite" aria-label="Advanced Search">
+                    <div class="small-12 columns MobileNav-advancedSearch">
+                        Advanced
+                    </div>
+                </a>
+            </div>
+        
+
+        <div class="MobileNav-advantageTout js-advantageTout row js-toggleRow
+           u-hideMe">
+            <div class="columns small-12">
+                <a class="MobileNav-closeAdvantageTout right js-closeAdvantageTout"
+                   href="javascript:void(0)" aria-label="Close" role="button" tabindex="5">&#215;</a>
+                <p class="MobileNav-advantageToutText text-center">
+                    More titles may be available to you. Sign in to see the full collection.
+                </p>
+                <div class="MobileNav-advantageToutSigninContainer text-center">
+                    <a href="/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher%26openAccountMenu%3Dtrue" class="u-allCaps MobileNav-advantageToutSignin" tabindex="4" aria-label="More titles may be available to you. Sign in to see the full collection.">
+                        Sign in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="nav-container Nav js-nav" aria-hidden="false">
+    <div class="row">
+        <nav class="top-bar unexpanded js-top-bar" data-topbar data-options="mobile_show_parent_link: false">
+            <div class="white-cover"></div>
+
+            <section class="top-bar-section">
+
+                <div class="DesktopNavLinks Nav-topRightLinks">
+                    
+
+                    
+                        <a class="DesktopNavLinks-link Nav-topRightLink DesktopNavLinks-feedback secondary-color-hover" tabindex="0" target="_blank" href="https://www.surveygizmo.com/s3/3039923/New-OverDrive-Patron-Survey-Ongoing-Wave-3-September-2016">Feedback</a>
+                    
+
+                    
+
+                    <a target="_blank" href="http://help.overdrive.com?Key=minuteman&edge=true" class="DesktopNavLinks-link Nav-topRightLink secondary-color-hover">Help</a>
+
+                    
+                </div>
+
+                <h1 tabindex="-1" class="Nav-logoWrapper--desktop" id="logo-desktop">
+                    
+                        <a tabindex="-1" aria-hidden="true" href="/">
+                            <img onerror="showAltLogoDesktop();" class="Nav-logo--desktop"  tabindex="-1" aria-hidden="true" alt="Logo for Minuteman Library Network" src="https://thunder.cdn.overdrive.com/logo-resized/1758?1468858745"/>
+                        </a>
+                    
+                </h1>
+
+                <a tabindex="-1" class="library-home-alt-link-desktop Nav-logoWrapper--desktop hideMeImportant" href="/"><span class="library-home-alt-text Nav-logo--desktop Nav-altLogo no-logo">Minuteman Library Network</span></a>
+
+                <ul role="navigation" class="left desktop hide-for-small-only Nav-bottomLeftLinksWrapper">
+                    <li tabindex="-1">
+                        <a tabindex="0" href="/browse" class="main-level">
+                            Subjects
+                        </a>
+                    </li>
+
+                    <li tabindex="-1" class="Nav-collectionsDropLink" data-dropdown="drop-collections" aria-controls="drop-collections" aria-expanded="false" aria-autoclose="false">
+                        <a aria-expanded="false" aria-haspopup="true" aria-controls="drop-collections" tabindex="0" href="javascript:void(0)" class="main-level Nav-collectionsLink">
+                            Collections
+                            &nbsp;
+                            <i class="icon-down-arrow Nav-collectionsDropArrow" tabindex="-1" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    
+                        
+                            <li tabindex="-1">
+                                <a tabindex="0" href="/library/youth" aria-label="" class="main-level">
+                                    Kids &amp; Teens
+                                </a>
+                            </li>
+                        
+                    
+                        
+                    
+
+                    <ul data-equalizer id="drop-collections" class="drop content f-dropdown dynamic Nav-collectionsDropdown" aria-hidden="true" tabindex="-1" aria-autoclose="false">
+                        <div class="large-11 medium-12 columns large-centered medium-centered">
+                            <ul class="large-block-grid-5 medium-block-grid-5">
+                                
+                                    <li>
+                                        <h2 tabindex="-1" class="u-allCaps">Special</h2>
+                                        <ul>
+                                            
+                                                
+                                                    <li tabindex="-1">
+                                                        <a tabindex="-1" href="/library/youth" aria-label="" class="featured-collection-item Nav-featuredCollectionItem">
+                                                            Kids &amp; Teens
+                                                        </a>
+                                                    </li>
+                                                
+                                            
+                                                
+                                            
+                                            
+                                        </ul>
+                                    </li>
+                                
+
+                                
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                        <li>
+                                            <h2 tabindex="-1" class="u-allCaps">EBOOKS</h2>
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30950" tabindex="-1"><span class="secondary-border-color">Available now</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30951" tabindex="-1"><span class="secondary-border-color">New eBook additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30952" tabindex="-1"><span class="secondary-border-color">New kids additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30953" tabindex="-1"><span class="secondary-border-color">New teen additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30954" tabindex="-1"><span class="secondary-border-color">Most popular</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30955" tabindex="-1"><span class="secondary-border-color">Try something different</span></a></li>
+                                                    
+                                                
+
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                    
+                                
+                                    
+                                    
+                                        <li>
+                                            <h2 tabindex="-1" class="u-allCaps">AUDIOBOOKS</h2>
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30956" tabindex="-1"><span class="secondary-border-color">Available now</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30957" tabindex="-1"><span class="secondary-border-color">New audiobook additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30958" tabindex="-1"><span class="secondary-border-color">New kids additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30959" tabindex="-1"><span class="secondary-border-color">New teen additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30960" tabindex="-1"><span class="secondary-border-color">Most popular</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30961" tabindex="-1"><span class="secondary-border-color">Try something different</span></a></li>
+                                                    
+                                                
+
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                    
+                                
+                                    
+                                    
+                                        <li>
+                                            <h2 tabindex="-1" class="u-allCaps">VIDEOS</h2>
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30962" tabindex="-1"><span class="secondary-border-color">Available now</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30963" tabindex="-1"><span class="secondary-border-color">New video additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30964" tabindex="-1"><span class="secondary-border-color">New kids additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30965" tabindex="-1"><span class="secondary-border-color">Most popular</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a class="featured-collection-item Nav-featuredCollectionItem" href="/collection/30966" tabindex="-1"><span class="secondary-border-color">Try something different</span></a></li>
+                                                    
+                                                
+
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                    
+                                
+                            </ul>
+                        </div>
+                    </ul>
+                </ul>
+
+                <!-- Right Nav Section -->
+                <ul role="presentation" class="right desktop hide-for-small-only Nav-bottomRightLinks">
+                    <li>
+                        <a href="javascript:void(0)" class="secondary-color-hover js-toggleSearch" aria-label="Search">
+                            <i class="icon-search-nav Nav-searchIcon--desktop secondary-color-hover" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/account/loans" class="secondary-color-hover" aria-label="Loans">
+                            <i class="icon-bookshelf Nav-bookshelfIcon--desktop secondary-color-hover" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    
+                        <li role="presentation" class="Nav-signInWrapper">
+                            <a tabindex="0" data-dropdown="dropAccount" aria-haspopup="true" data-options="align:bottom" class="signed-out js-account-menu-link Nav-signIn secondary secondary-background" aria-controls="dropAccount" aria-expanded="false" href="#" id="account-holder-name">Sign in</a>
+
+                            <div id="dropAccount" data-dropdown-content class="f-dropdown large content Nav-advantageTout" aria-hidden="true" tabindex="-1">
+                                <p tabindex="0" class="advantage-tout-text">
+                                    More titles may be available to you. Sign in to see the full collection.
+                                </p>
+                                <div class="text-center">
+                                    <a href="/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher%26openAccountMenu%3Dtrue" class="sign-in contrast u-allCaps" tabindex="0">
+                                        Sign in
+                                    </a>
+                                </div>
+
+                                <a class="close-advantage-tout contrast js-closeAdvantageTout" href="javascript:void(0)" aria-label="Close" role="button" tabindex="0">&#215;</a>
+                            </div>
+                        </li>
+                    
+                </ul>
+            </section>
+        </nav>
+
+        <div class="row">
+            <ul aria-hidden="true" tabindex="-1" class="js-account-menu-mobile MobileAccountMenuContent">
+    
+</ul>
+
+
+            <div class="mobile-nav-wrapper unexpanded">
+                <div class="mobile-nav-menu" data-menu="main">
+                    <ul class="accordion top-nav" data-accordion>
+                        
+                        <li>
+                            <div class="help-mobile">
+                                <a class="signed-out js-account-menu-link Nav-signIn button secondary secondary-background" href="/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher%26openAccountMenu%3Dtrue" >
+                                    Sign in
+                                </a>
+                            </div>
+                        </li>
+                        
+
+                        <li>
+                            <div class="help-mobile">
+                                <a class="contrast" href="/browse">Subjects</a>
+                            </div>
+                        </li>
+
+                        
+                            <li class="accordion-navigation top-nav" data-sub-nav="featured-collections">
+                                <a href="#featured-collections" role="tab" id="featured-collections-heading" aria-controls="featured-collections" class="contrast nav-panel-name">Collections</a><a href="#featured-collections" class="nav-panel-icon" tabindex="-1"><i class="icon-forward-arrow panel-arrow right chevron" aria-hidden="true"></i></a>
+
+                                <div id="featured-collections" class="content" role="tabpanel" aria-labelledby="featured-collections-heading">
+                                    
+                                        
+
+                                        
+                                            <hr/>
+                                        
+                                    
+                                        
+                                            <ul>
+                                                <li class="nav-heading" tabindex="0">EBOOKS</li>
+
+                                                
+                                                    
+                                                        <li><a href="/collection/30950"><span>Available now</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30951"><span>New eBook additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30952"><span>New kids additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30953"><span>New teen additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30954"><span>Most popular</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30955"><span>Try something different</span></a></li>
+                                                    
+                                                
+
+                                                
+                                            </ul>
+                                        
+
+                                        
+                                            <hr/>
+                                        
+                                    
+                                        
+                                            <ul>
+                                                <li class="nav-heading" tabindex="0">AUDIOBOOKS</li>
+
+                                                
+                                                    
+                                                        <li><a href="/collection/30956"><span>Available now</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30957"><span>New audiobook additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30958"><span>New kids additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30959"><span>New teen additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30960"><span>Most popular</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30961"><span>Try something different</span></a></li>
+                                                    
+                                                
+
+                                                
+                                            </ul>
+                                        
+
+                                        
+                                            <hr/>
+                                        
+                                    
+                                        
+                                            <ul>
+                                                <li class="nav-heading" tabindex="0">VIDEOS</li>
+
+                                                
+                                                    
+                                                        <li><a href="/collection/30962"><span>Available now</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30963"><span>New video additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30964"><span>New kids additions</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30965"><span>Most popular</span></a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="/collection/30966"><span>Try something different</span></a></li>
+                                                    
+                                                
+
+                                                
+                                            </ul>
+                                        
+
+                                        
+                                            <hr/>
+                                        
+                                    
+                                </div>
+                            </li>
+                        
+
+                        
+                            
+                                <li tabindex="-1">
+                                    <a tabindex="0" href="/library/youth" aria-label="" class="contrast nav-panel-name">
+                                        Kids &amp; Teens
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                        
+
+                        
+
+                        
+                            <li>
+                                <div class="help-mobile">
+                                    <a class="text-center contrast" target="_blank" href="https://www.surveygizmo.com/s3/3039923/New-OverDrive-Patron-Survey-Ongoing-Wave-3-September-2016">
+                                        Feedback
+                                    </a>
+                                </div>
+                            </li>
+                        
+
+                        <li>
+                            <div class="help-mobile">
+                                <a class="text-center contrast" target="_blank" href="http://help.overdrive.com?Key=minuteman&edge=true">Help</a>
+                            </div>
+                        </li>
+
+                        
+
+                        
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row js-nav-search-drop hideMe">
+        <hr class="Nav-searchSeparator"/>
+        <div class="large-12 columns">
+            <div class="Nav-searchDrop">
+                <div class="search-bar Nav-searchBar">
+                    <form class="js-quickSearchDesktop js-quickSearchForm" id="search-form" method="get" action="/search" autocomplete="off">
+                        <label class="hideMe" id="search-label" for="nav-search">Search</label>
+                        <input tabindex="1" type="text" maxlength="100" name="query" id="nav-search" autocomplete="off"
+                               data-search="nav-search" title="Search" aria-labelledby="search-label"
+                               class="js-quickSearchInput search-input Nav-searchInput" value="cold days jim butcher" />
+
+                        <div class="Nav-searchButtonContainer">
+                            <button tabindex="2" class="js-doQuickSearch fake-button right" aria-label="Submit search.">
+                                <span tabindex="-1" class="desktop-search Nav-searchButton right">Search</span>
+                            </button>
+                            <i class="icon-clear js-clearSearch Nav-clearSearch right hideMe"></i>
+                        </div>
+
+                        <div class="js-quickSearchAutocompletionsDesktop"></div>
+
+                        
+                            <i class="icon-forward-arrow Nav-advancedSearchCaret right"></i>
+                            <a class="js-desktopAdvancedSearch secondary-color-hover help-link-desktop advanced-search-desktop Nav-advancedSearch right" tabindex="0" href="/advanced-search">Advanced</a>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-placeholder js-toastPlaceholder"></div>
+
+<div class="js-toaster"></div>
+
+    <div class="row Results-heading" id="main">
+        
+            <div class="large-9 columns left">
+                
+                    
+                        <h2 class="search-text">Showing 1-1 of 1 results for <span class="search-term">&ldquo;cold days jim butcher&rdquo;</span></h2>
+                    
+                
+            </div>
+
+            
+                <div class="large-3 columns SearchViewOptions">
+                    <a tabindex="0" href="" class="view-as-grid" aria-label="View items in grid format."><i class="icon-grid disabled gray" aria-hidden="true"></i></a>
+                    <a tabindex="0" href="" class="view-as-list" aria-label="View items in list format."><i class="icon-list disabled gray" aria-hidden="true"></i></a>
+                    <select class="SearchViewOptions-sort js-searchSortByOptions" title="Sort Results By">
+                        
+                            
+
+                            
+                                <option value="newlyadded" id="newlyadded">Date added</option>
+                            
+                        
+                            
+
+                            
+                                <option value="mostpopular" id="mostpopular">Popularity</option>
+                            
+                        
+                            
+
+                            
+                                <option value="relevance" id="relevance" selected>Relevance</option>
+                            
+                        
+                            
+
+                            
+                                <option value="releasedate" id="releasedate">Release date</option>
+                            
+                        
+                            
+
+                            
+                                <option value="title" id="title">Title</option>
+                            
+                        
+                            
+
+                            
+                                <option value="author" id="author">Author</option>
+                            
+                        
+                    </select>
+                </div>
+            
+        
+    </div>
+
+    <section id="search">
+        
+
+            <div class="row">
+                <div class="columns small-12">
+                    <button class="button right Facets-showMobileFacets js-showFacets">Filters</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="large-3 columns Facets js-facetsContainer" role="region" id="facets">
+    
+
+    <!-- Applied Facets -->
+    <span class="Facets-filterTitle" tabindex="0" aria-label="Filter search results.">Filter search results.</span>
+    <div class="row collapse" aria-hidden="true">
+        
+    </div>
+
+    <!-- Facets -->
+    <div class="row collapse" aria-label="Title availability filters">
+        <div class="Facets-groupContainer js-expand-facet">
+            <ul class="Facets-group" role="presentation">
+                <li class="Facets-groupSection" role="presentation" aria-expanded="true" aria-label="Title availability filters" tabindex="0">
+                    <div class="u-pullRight js-show-toggle js-expanded" data-filter="show">
+                        <i class="icon-down-arrow" aria-hidden="true"></i>
+                    </div>
+                    <a class="Facets-showToggle" aria-expanded="true" aria-label="Title availability filters" href="javascript:void(0);" tabindex="0">
+                        <h3 class="Facets-groupHeader">Availability</h3>
+                    </a>
+                </li>
+                <li class="Facets-groupSection" role="presentation">
+                    <hr class="Facets-groupDivider" aria-hidden="true"/>
+                    <div data-filter-content="show">
+                        <ul class="Facets-sectionList" role="presentation">
+                            
+                                <li role="presentation" data-id="all-titles" data-facet="all-titles" class="Facets-sectionListItem is-active js-active">
+                                    <a class="Facets-sectionListItemLink" aria-label="Show All titles filter" href="javascript:void(0);">All titles</a>
+                                </li>
+                            
+                                <li role="presentation" data-id="available-now" data-facet="available-now" class="Facets-sectionListItem ">
+                                    <a class="Facets-sectionListItemLink" aria-label="Show Available now filter" href="javascript:void(0);">Available now</a>
+                                </li>
+                            
+                                <li role="presentation" data-id="recommend-to-library" data-facet="recommend-to-library" class="Facets-sectionListItem ">
+                                    <a class="Facets-sectionListItemLink" aria-label="Show Recommend to library filter" href="javascript:void(0);">Recommend to library</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+        <div class="row collapse">
+            <div class="Facets-groupContainer js-expand-facet">
+                <ul class="Facets-group" role="presentation">
+                    <li class="Facets-groupSection" data-facet-container="maturity" role="presentation" aria-expanded="false" aria-label="Audience filters" tabindex="0">
+                        <div class="u-pullRight js-show-toggle js-unexpanded" data-filter="audience">
+                                <i class="icon-forward-arrow" aria-hidden="true"></i>
+                        </div>
+                        <a class="Facets-showToggle" aria-label="Audience filters" aria-expanded="false" href="javascript:void(0);" tabindex="0">
+                            <h3 class="Facets-groupHeader">Audience</h3>
+                        </a>
+                    </li>
+                    <li class="Facets-groupSection" role="presentation" >
+                        <hr class="Facets-groupDivider" aria-hidden="true"/>
+                        <div data-filter-content="audience" class="u-hideMe">
+                            <ul class="Facets-sectionList" role="presentation">
+                                
+                                
+                                    <li role="presentation" class="Facets-sectionListItem " data-id="generalcontent" data-facet-full-name="maturityLevel-generalcontent" data-facet="maturity">
+                                        <a class="Facets-sectionListItemLink" aria-label="General adult filter. 1 items. " href="javascript:void(0);">General adult</a>
+                                        <span aria-hidden="true" class="u-pullRight Facets-facetTotal">1</span>
+                                    </li>
+
+                                    
+                                
+                                
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+
+    
+        <div class="row collapse" >
+            <div class="Facets-groupContainer js-expand-facet">
+                <ul class="Facets-group" role="presentation" >
+                    <li class="Facets-groupSection" data-facet-container="dateAdded" role="presentation" aria-expanded="false" aria-label="Date added filters" tabindex="0">
+                        <div class="u-pullRight js-show-toggle js-unexpanded" data-filter="dateAdded">
+                            <i class="icon-forward-arrow" aria-hidden="true"></i>
+                        </div>
+                        <a class="Facets-showToggle" aria-label="Date added filters" aria-expanded="false" href="javascript:void(0);" tabindex="0">
+                            <h3 class="Facets-groupHeader">Date added</h3>
+                        </a>
+                    </li>
+                    <li class="Facets-groupSection" role="presentation">
+                        <hr class="Facets-groupDivider" aria-hidden="true"/>
+                        <div data-filter-content="dateAdded" class="u-hideMe">
+                            <ul class="Facets-sectionList" role="presentation" >
+                                
+                                    <li role="presentation" class="Facets-sectionListItem  is-disabled js-disabled" data-id="days-0-7" data-facet="date">
+                                        <a class="Facets-sectionListItemLink is-disabled js-disabled" aria-disabled="true"
+                                           aria-label="Last 7 days filter. 0 items. " href="javascript:void(0);">Last 7 days</a>
+                                        <span aria-hidden="true" class="u-pullRight Facets-facetTotal">0</span>
+                                    </li>
+
+                                    
+                                
+                                    <li role="presentation" class="Facets-sectionListItem  is-disabled js-disabled" data-id="days-0-14" data-facet="date">
+                                        <a class="Facets-sectionListItemLink is-disabled js-disabled" aria-disabled="true"
+                                           aria-label="Last 14 days filter. 0 items. " href="javascript:void(0);">Last 14 days</a>
+                                        <span aria-hidden="true" class="u-pullRight Facets-facetTotal">0</span>
+                                    </li>
+
+                                    
+                                
+                                    <li role="presentation" class="Facets-sectionListItem  is-disabled js-disabled" data-id="days-0-30" data-facet="date">
+                                        <a class="Facets-sectionListItemLink is-disabled js-disabled" aria-disabled="true"
+                                           aria-label="Last 30 days filter. 0 items. " href="javascript:void(0);">Last 30 days</a>
+                                        <span aria-hidden="true" class="u-pullRight Facets-facetTotal">0</span>
+                                    </li>
+
+                                    
+                                
+                                    <li role="presentation" class="Facets-sectionListItem  is-disabled js-disabled" data-id="days-0-90" data-facet="date">
+                                        <a class="Facets-sectionListItemLink is-disabled js-disabled" aria-disabled="true"
+                                           aria-label="Last 3 months filter. 0 items. " href="javascript:void(0);">Last 3 months</a>
+                                        <span aria-hidden="true" class="u-pullRight Facets-facetTotal">0</span>
+                                    </li>
+
+                                    
+                                
+                                    <li role="presentation" class="Facets-sectionListItem  is-disabled js-disabled" data-id="days-0-180" data-facet="date">
+                                        <a class="Facets-sectionListItemLink is-disabled js-disabled" aria-disabled="true"
+                                           aria-label="Last 6 months filter. 0 items. " href="javascript:void(0);">Last 6 months</a>
+                                        <span aria-hidden="true" class="u-pullRight Facets-facetTotal">0</span>
+                                    </li>
+
+                                    
+                                
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+
+    
+        
+            
+                <div class="row collapse" >
+                    <div class="Facets-groupContainer js-expand-facet">
+                        <ul class="Facets-group" role="presentation">
+                            <li class="Facets-groupSection" data-facet-container="ebook" role="presentation" aria-expanded="false"
+                                aria-label="eBook format filters" data-name="eBook" data-id="ebook" tabindex="0">
+                                <div class="u-pullRight js-show-toggle js-unexpanded" data-filter="eBook">
+                                    <i class="icon-forward-arrow" aria-hidden="true"></i>
+                                </div>
+                                <a class="Facets-showToggle" aria-expanded="false" aria-label="eBook format filters" href="javascript:void(0);" tabindex="0">
+                                    <h3 class="Facets-groupHeader">
+                                        eBooks
+                                    </h3>
+                                </a>
+                            </li>
+                            <li class="Facets-groupSection" role="presentation" >
+                                <hr class="Facets-groupDivider" aria-hidden="true"/>
+                                <div data-filter-content="eBook" class="u-hideMe">
+                                    <ul class="Facets-sectionList" role="presentation">
+                                        
+                                        
+                                            
+                                                
+                                            
+                                        
+                                        
+                                            <script>
+                                                
+                                            </script>
+
+                                            
+                                                <li role="presentation" class="Facets-sectionListItem " data-id="ebook-kindle" data-facet="format">
+                                                    <a class="Facets-sectionListItemLink" aria-label="Kindle Book filter. 1 items. " href="javascript:void(0)">Kindle Book</a>
+                                                    <span aria-hidden="true" class="u-pullRight Facets-facetTotal">1</span>
+                                                </li>
+                                            
+
+                                            
+                                        
+                                            <script>
+                                                
+                                            </script>
+
+                                            
+                                                <li role="presentation" class="Facets-sectionListItem " data-id="ebook-overdrive" data-facet="format">
+                                                    <a class="Facets-sectionListItemLink" aria-label="OverDrive Read filter. 1 items. " href="javascript:void(0)">OverDrive Read</a>
+                                                    <span aria-hidden="true" class="u-pullRight Facets-facetTotal">1</span>
+                                                </li>
+                                            
+
+                                            
+                                        
+                                            <script>
+                                                
+                                            </script>
+
+                                            
+                                                <li role="presentation" class="Facets-sectionListItem " data-id="ebook-epub-adobe" data-facet="format">
+                                                    <a class="Facets-sectionListItemLink" aria-label="EPUB eBook filter. 1 items. " href="javascript:void(0)">EPUB eBook</a>
+                                                    <span aria-hidden="true" class="u-pullRight Facets-facetTotal">1</span>
+                                                </li>
+                                            
+
+                                            
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+
+    <div class="row collapse" >
+        <div class="Facets-groupContainer js-expand-facet">
+            <ul class="Facets-group" role="presentation" >
+                <li class="Facets-groupSection" data-facet-container="subjects" role="presentation" aria-expanded="true" aria-label="Subject filters" tabindex="0">
+                    <div class="u-pullRight js-show-toggle js-expanded" data-filter="subjects">
+                        <i class="icon-down-arrow" aria-hidden="true"></i>
+                    </div>
+                    <a class="Facets-showToggle" aria-label="Subject filters" aria-expanded="true" href="javascript:void(0);" tabindex="0">
+                        <h3 class="Facets-groupHeader">Subject</h3>
+                    </a>
+                </li>
+                <li class="Facets-groupSection" role="presentation">
+                    <hr class="Facets-groupDivider" aria-hidden="true"/>
+                    <div data-filter-content="subjects">
+                        <ul class="Facets-sectionList" role="presentation" >
+                            
+                                <li role="presentation" class="Facets-sectionListItem " data-id="24" data-facet="subject">
+                                    <a class="Facets-sectionListItemLink" aria-label="Fantasy filter. 1 items. " href="javascript:void(0);">Fantasy</a>
+                                    <span aria-hidden="true" class="u-pullRight Facets-facetTotal">1</span>
+                                </li>
+                                
+
+                                
+
+                                
+                            
+                                <li role="presentation" class="Facets-sectionListItem " data-id="26" data-facet="subject">
+                                    <a class="Facets-sectionListItemLink" aria-label="Fiction filter. 1 items. " href="javascript:void(0);">Fiction</a>
+                                    <span aria-hidden="true" class="u-pullRight Facets-facetTotal">1</span>
+                                </li>
+                                
+
+                                
+
+                                
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
+
+
+
+<div role="dialog" id="pre-release-modal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-header">
+        <h1 class="modal-title primary-color" id="modalTitle">This title is pre-release</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <p class="pre-release-explanation js-first-focus js-prerelease-modal-body" data-first-focus tabindex="0"></p>
+
+        <p tabindex="0">
+            <b>Total holds:</b> <span class="js-total-holds-count"></span><br/>
+            <b>Library copies:</b> <span class="js-library-copies-count"></span>
+        </p>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" role="button" id="close-availability" aria-label="Close" tabindex="0">&#215;</a>
+</div>
+
+<div role="dialog" id="holds-ratio-help" class="reveal-modal small js-holds-ratio-help-modal HoldsRatioHelpModal" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-header">
+        <h1 tabindex="0" data-first-focus class="modal-title primary-color js-first-focus u-allCaps" id="modalTitle">Holds explained</h1>
+    </div>
+
+    <div class="modal-container js-holds-ratio-help-modal-content" role="dialog"></div>
+
+    <a class="close-reveal-modal js-last-focus" role="button" id="close-ratio-help" tabindex="0" aria-label="Close">&#215;</a>
+</div>
+<!-- Dynamic hold modal - used for placing a hold from the title element -->
+<!--
+    data-id="title" = The title of the media
+    data-id="title-format-badge" = The name of the format
+    data-id="format-icon" = The id of the format to be used as an icon
+    data-id="cover-image" = The src of the cover image to display
+    data-id="pre-release-label" = The pre-release label, change the inline styling display if applicable
+    data-media-id="" = Set this to the id of the media to hold
+-->
+<div role="dialog" id="hold-dynamic-modal" class="reveal-modal small" data-reveal aria-labelledby="hold-modal-title" aria-hidden="true">
+    <div class="modal-header">
+        <h1 class="modal-title primary-color" id="hold-modal-title">Place a hold</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <div class="large-12 columns no-padding-left">
+            <h2 data-id="title"></h2>
+            <span class="title-format-badge"><i data-id="format-icon" class=""></i> <span data-id="format-name"></span></span>
+        </div>
+
+        <div class="medium-4 columns no-padding-left">
+            <img data-id="cover-image" src="" alt="Cover image"/>
+        </div>
+
+        <form id="hold-dynamic-form" data-abide="ajax" data-media-id="">
+            <div class="medium-8 columns">
+                <p data-id="pre-release-label" class="header-xxxsmall prerelease text-red modal"></p>
+
+                <p id="hold-modal-label">
+                    Fill out the form below to place a hold on this title, and Minuteman Library Network will contact you when it&#39;s available.
+                </p>
+
+                <label>
+                    <input data-first-focus type="email" id="email-dynamic" class="patron-hold-email-dynamic js-first-focus" autofocus placeholder="Email address" title="Email address" aria-label="Email address" aria-labelledby="hold-modal-label" required />
+                </label>
+                <small class="error">Email address is required and must match..</small>
+
+                <label>
+                    <input type="email" id="email-conf-dynamic" class="patron-hold-email-conf-dynamic" placeholder="Confirm email address" title="Confirm email address" aria-label="Confirm email address" required data-equalto="email-dynamic" />
+                </label>
+                <small class="error">Both email addresses must match.</small>
+            </div>
+
+            <div class="button-container">
+                <button data-style="zoom-out" tabindex="0" type="submit" id="place-hold" class="button radius margin-small secondary u-allCaps" aria-label="Place a hold">
+                    Place a hold
+                </button>
+
+                <button type="button" data-cancel class="button radius margin-small outline gray cancel u-allCaps">Cancel</button>
+            </div>
+            <input type="hidden" id="csrf" name="_csrf" value="QtnDipQ7-lybExw98A4nsabbe8ZKZCD6L3-4">
+        </form>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="" role="button" aria-label="Close" tabindex="0">&#215;</a>
+</div>
+
+<!-- Modal for when Hold is successful -->
+<div role="dialog" id="js-HoldSuccessModal" class="reveal-modal large js-holdSuccessModal" data-reveal aria-labelledby="hold-modal-title" aria-hidden="true">
+    <div class="modal-header">
+        <h1 class="modal-title primary-color js-first-focus" id="HoldSuccessModal-title" data-first-focus tabindex="0">Success!</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <div data-id="loading-container"></div>
+        <div class="js-holdSuccessContent"></div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="" role="button" aria-label="Close" tabindex="0">&#215;</a>
+</div>
+
+
+
+    <script src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/js/app/media.js?c098a60aa0"></script>
+
+
+                
+                
+
+                <div class="large-9 columns media-container loading" data-collection-id="">
+                    
+
+                    <div class="media-loader">
+                        
+                            <img src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/img/loading2.gif?4f648594af"><br/>
+                        
+
+                        <span class="animated infinite pulse u-allCaps">Loading</span>
+                    </div>
+                </div>
+
+                <div class="large-9 columns media-container loaded grid-view" id="main">
+                    <ul class="large-block-grid-4 medium-block-grid-4 small-block-grid-2">
+                        
+
+                        
+                            <li>
+                                <div class="title-container ebook">
+                                    <div class="title-contents card">
+                                        <div aria-hidden="true" data-media-id="1045267" class="title-header-bar available-title secondary-background"><a data-banner data-media-id="1045267" tabindex="-1" href="/media/1045267">AVAILABLE</a></div>
+                                        
+                                        
+                                        
+    
+    
+
+    <!--------START LOGIC TO DEFINE BUTTON STATES-------->
+    
+    <!--------END LOGIC TO DEFINE BUTTON STATES-------->
+
+    <div class="title" data-title-id="1045267">
+        <!--- BANNER FOR LIST VIEW ---->
+        <div class="title-banner list-view">
+            <div aria-hidden="true" data-media-id="1045267" class="title-header-bar available-title secondary-background list-view"><a tabindex="-1" class="contrast" href='/media/1045267'>AVAILABLE</a></div>
+        </div>
+
+        <a href="/media/1045267" tabindex="-1">
+            
+                
+
+
+    <div class="CoverImageContainer" style="background-color: #344360">
+        <img src="https://img1.od-cdn.com/ImageType-400/1523-1/D5E/534/CB/{D5E534CB-A7E1-4897-BC2E-90EBA8A3A981}Img400.jpg"
+             alt="Cover image for Cold Days"
+             style="background-color: #344360"/>
+    </div>
+
+
+
+            
+        </a>
+
+        
+    </div>
+
+<div class="title-info">
+    <p class="title-name" data-media-id="1045267">
+        <a tabindex="0" href="/media/1045267" role="link" aria-label="Cold Days by Jim Butcher. Available eBook.">
+            Cold Days
+        </a>
+    </p>
+
+    
+        <p class="series no-author"><a class="series-link secondary-hover-underline"  aria-label="Search by series, The Dresden Files Series, Book 14" role="link" href="/search/series?query=The%20Dresden%20Files&sortBy=newlyadded">The Dresden Files Series, Book 14</a></p>
+    
+
+    <p class="title-author">
+        
+            
+                
+                by <a class="secondary-hover-underline" href="/search/creatorId?query=161804&sortBy=newlyadded" aria-label="Search by author, Jim Butcher">Jim Butcher</a>
+            
+        
+    </p>
+
+    <span class="title-format-badge CoverPartial-titleFormatBadge contrast u-allCaps "><i class="icon-ebook"></i>eBook</span>
+
+    
+        
+        
+        
+
+        <div class="star-rating list-view">
+            
+                
+    <div data-global-rating="4.6" data-media-id="1045267" class="star-ratings-container StarRatings  js-no-auth">
+        
+        <i data-index="1" class="icon-star contrast StarRatings-star filled" tabindex="0" role="button"
+          
+              aria-label="This title is rated 4.6 stars"
+          
+          >
+        </i>
+        
+        <i data-index="2" class="icon-star contrast StarRatings-star filled" tabindex="0" role="button"
+          
+              aria-label="This title is rated 4.6 stars"
+          
+          >
+        </i>
+        
+        <i data-index="3" class="icon-star contrast StarRatings-star filled" tabindex="0" role="button"
+          
+              aria-label="This title is rated 4.6 stars"
+          
+          >
+        </i>
+        
+        <i data-index="4" class="icon-star contrast StarRatings-star filled" tabindex="0" role="button"
+          
+              aria-label="This title is rated 4.6 stars"
+          
+          >
+        </i>
+        
+        <i data-index="5" class="icon-star contrast StarRatings-star filled" tabindex="0" role="button"
+          
+              aria-label="This title is rated 4.6 stars"
+          
+          >
+        </i>
+        
+    </div>
+
+
+            
+        </div>
+    
+
+    
+        
+            <p class="copies-available CoverPartial-copiesAvailable">
+                2 of 3 copies available
+            
+            </p>
+
+            
+        
+    
+</div>
+
+
+<div class="title-description   ">
+    
+    HARRY DRESDEN LIVES!!!   After being murdered by a mystery assailant, navigating his way through the realm between life and death, and being brought back to the mortal world, Harry realizes that maybe death wasn't all that bad....
+
+    
+        <a href="/media/1045267" class="expand-description contrast secondary-hover-underline">Read more</a>
+    
+</div>
+
+
+
+
+
+    <div class="action-buttons list-view ">
+        
+            
+                
+    
+        <div class="borrowButton no-auth below-600-full-width">
+            <a data-spinner-button data-style="zoom-out" role="button" tabindex="0"
+               class="button radius big margin-small no-auth-borrow secondary below-600-full-width action-button"
+               id="submit-borrow" href="/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher&action=borrow~1045267">
+                <span class="u-allCaps">Borrow</span>
+            </a>
+        </div>
+    
+
+            
+        
+
+        
+            <div class="WishlistButton--listView">
+                
+                    
+    <div class="wishlist-container WishlistButton js-wishlist-button ">
+        <div class="Wishlistbutton-wrapper">
+            <i class="icon-wish-list WishlistButton-icon" aria-hidden="true"></i>
+        <a role="button" class="disabled contrast radius below-600-full-width gray action-button wish-list-button WishlistButton-action add u-allCaps" id="wishlist" href="/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher&action=wish~1045267"><span>Add to wish list</span></a>
+        </div>
+    </div>
+
+                
+            </div>
+        
+    </div>
+
+    
+    <div tabindex="0" class="more-actions list-view secondary-background-hover contrast" data-media-id="1045267"
+         data-title="Cold Days" data-dropdown="more-actions-drop-1045267-5-list-view"
+         data-options="ignore_repositioning:true;align:bottom" aria-controls="more-actions-drop-1045267"
+         aria-expanded="false" aria-label="Cold Days information" role="button">
+        <i class="icon icon-more"></i>
+    </div>
+
+    <ul id="more-actions-drop-1045267-5-list-view" class="more-actions-drop f-dropdown list-view" data-options="align:left" data-dropdown-content aria-hidden="false" tabindex="-1" role="list" aria-haspopup="true">
+    
+        
+
+        
+            <li class="read-sample">
+                <a data-href="https://samples.overdrive.com/?crid=D5E534CB-A7E1-4897-BC2E-90EBA8A3A981&amp;.epub-sample.overdrive.com" data-media-id="1045267" data-title="Cold Days"
+                   data-of-dropdown="more-actions-drop-1045267-5-list-view" data-type="ebook"
+                   tabindex="-1" href="javascript:void(0)" aria-label="Read a sample of Cold Days">
+                    Read a sample
+                </a>
+            </li>
+        
+        <li><a tabindex="-1" href="/media/1045267" aria-label="View details about Cold Days">View details</a></li>
+        <li><a tabindex="-1" href="/media/related/1045267" aria-label="View titles related to Cold Days">You may also like</a></li>
+        </ul>
+    
+
+
+
+    
+        
+            
+                <div class="primary-action-container">
+                    <a data-media-id="1045267" data-type-name="eBook"
+                       data-type="ebook" class="primary-action bold secondary-color u-allCaps" role="button"
+                       href="/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher&action=borrow~1045267" tabindex="0">
+                        Borrow
+                    </a>
+                </div>
+            
+        
+    
+
+
+
+    
+        <div class="wishlist" data-media-id="1045267">
+        
+            <a href="/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher&action=wish~1045267" tabindex="0" href="javascript:void(0)" aria-label="Add to wish list">
+        
+            <i class="icon animated icon-wish-list" aria-hidden="true"></i>
+           </a>
+        </div>
+    
+
+    <div tabindex="0" class="more-actions dot-menu secondary-background-hover contrast " data-media-id="1045267"
+         data-title="Cold Days" data-dropdown="more-actions-drop-1045267-5"
+         data-options="ignore_repositioning:true;align:bottom" aria-controls="more-actions-drop-1045267" aria-expanded="false"
+         aria-label="Cold Days information" role="button">
+        <i class="icon icon-more"></i>
+    </div>
+
+    <ul id="more-actions-drop-1045267-5" class="more-actions-drop  f-dropdown" data-options="align:left"
+        data-dropdown-content aria-hidden="false" tabindex="-1" role="list" aria-haspopup="true">
+        
+        
+
+        
+            <li class="read-sample">
+                <a data-href="https://samples.overdrive.com/?crid=D5E534CB-A7E1-4897-BC2E-90EBA8A3A981&amp;.epub-sample.overdrive.com" data-media-id="1045267" data-title="Cold Days"
+                   data-of-dropdown="more-actions-drop-1045267-5" data-type="ebook" tabindex="-1"
+                   href="javascript:void(0)" aria-label="Read a sample of Cold Days">
+                    Read a sample
+                </a>
+            </li>
+        
+        <li><a tabindex="-1" href="/media/1045267" aria-label="View details about Cold Days">View details</a></li>
+        <li><a tabindex="-1" href="/media/related/1045267" aria-label="View titles related to Cold Days">You may also like</a></li>
+    </ul>
+
+
+                                    </div>
+                                </div>
+                            </li>
+                        
+                    </ul>
+                    
+                        
+                    
+                    <div class="row">
+    <div class="large-12 columns Pagination">
+        <!-- PAGINATION FOR DESKTOP RESOLUTIONS -->
+        <div class="Pagination-container is-desktop">
+            <ul class="Pagination-itemsContainer" role="navigation" aria-label="Pagination">
+                
+
+                
+
+                
+                    
+                        <li class="Pagination-itemContainer  is-current primary-color">
+                            <a class="Pagination-item" role="button" aria-label="Page 1" href="">1</a>
+                        </li>
+                    
+                
+
+                
+            </ul>
+        </div>
+
+        <!-- PAGINATION FOR MOBILE RESOLUTIONS -->
+        <div class="Pagination-container is-mobile">
+            <ul class="Pagination-itemsContainer" role="navigation" aria-label="Pagination">
+                
+
+                
+
+                
+                    <li class="Pagination-itemContainer is-current primary-color  ">
+                        <a class="Pagination-item" role="button" aria-label="Page 1" href="">1</a>
+                    </li>
+                
+
+                
+            </ul>
+
+            
+        </div>
+    </div>
+</div>
+
+                </div>
+
+                
+                    <div class="large-9 columns grid-view">
+                        <div class="RTLRecommendations js-rtlRecommendations" data-has-results="true">
+    <div class="RTLRecommendations-loader js-rtlLoader u-hideMe">
+        Loading...
+    </div>
+
+    <div class="RTLRecommendations-container js-rtlContainer u-hideMe" data-has-results="true">
+        <div class="u-hr"></div>
+
+        <a href="javascript:void(0)" class="RTLRecommendations-seeAllButton u-pullRight u-allCaps js-seeAllRTL">
+            See all
+        </a>
+
+        <h6 class="RTLRecommendations-title">Didn&#39;t find what you&#39;re looking for?</h6>
+        <p class="RTLRecommendations-subTitle">
+            We can add titles that aren&#39;t in the collection to your search results so you can recommend them.
+        </p>
+
+        <ul class="large-block-grid-4 medium-block-grid-4 small-block-grid-2 RTLRecommendations-titleContainer js-rtlPreview"></ul>
+    </div>
+</div>
+
+                    </div>
+                
+            </div>
+        
+    </section>
+
+    <!-- Nook EULA Modal -->
+<div role="dialog" id="nook-eula-dynamic" class="nook-eula-modal reveal-modal small" data-reveal aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-header">
+        <h1 data-first-focus tabindex="0" class="nook-color modal-title js-first-focus u-allCaps">Send to Nook® app</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <div class="row">
+            <div class="large-12 columns">
+                <img src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/img/bn-logo.jpg?a88f86f2b2" class="barnes-and-noble-logo">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns no-padding-left">
+                <p tabindex="0">
+                    If this is your first time selecting &quot;Send to NOOK® app,&quot; you will be taken to a Barnes &amp; Noble page to sign into (or create) your NOOK account. You should only have to sign into your NOOK account once to link it to your library account. After this one-time step, periodicals will be automatically sent to your NOOK account when you select &quot;Send to NOOK® app.&quot;<br/><br/>
+
+                    You can read periodicals on any NOOK tablet or in the free NOOK reading app for <a href="https://itunes.apple.com/us/app/NOOK/id373582546" target="_blank" class="modal-link">iOS</a>, <a href="https://play.google.com/store/apps/details?id=bn.ereader&hl=en" target="_blank" class="modal-link">Android</a>, or <a href="https://www.microsoft.com/en-us/store/apps/nook-books-magazines-newspapers-comics/9wzdncrfj33h" target="_blank" class="modal-link">Windows 8</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns button-container">
+                <a data-style="zoom-out" id="accept-nook-dynamic" data-action="nook" role="button" href="javascript:void(0)" class="button nook-background margin-small radius u-allCaps" aria-label="Continue"><span>Accept to continue</span></a>
+                <button type="button" data-cancel class="button gray radius margin-small outline gray cancel u-allCaps" id="cancel-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="javascript:void(0);" tabindex="0" role="button" aria-label="Close">&#215;</a>
+</div>
+    <div role="dialog" id="limited-availability-help" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-header">
+        <h1 class="modal-title primary-color u-allCaps" id="modalTitle">Why is availability limited?</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <p id="availability-label" tabindex="0" data-first-focus class="js-first-focus">
+            Availability can change throughout the month based on the library&#39;s budget. You can still place a hold on the title, and your hold will be automatically filled as soon as the title is available again.
+        </p>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" role="button" id="close-availability" tabindex="0" aria-label="Close">&#215;</a>
+</div>
+
+    <div role="dialog" id="limited-periodical-availability" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-header">
+        <h1 class="modal-title primary-color u-allCaps" id="modalTitle">Why is availability limited?</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <p id="periodical-availability-label" data-first-focus tabindex="0" class="js-first-focus">
+            There are no copies of this edition left to borrow. Please try to borrow this periodical again when a new edition is released.
+        </p>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" role="button" id="close-periodical-availability" tabindex="0" aria-label="Close">&#215;</a>
+</div>
+
+    <div role="dialog" id="recommend-modal" class="js-recommend-modal reveal-modal RecommendModal small" data-reveal aria-labelledby="recommend-modal-title" aria-hidden="true">
+    <div class="modal-header">
+        <h1 class="modal-title primary-color js-first-focus" id="recommend-modal-title" data-first-focus tabindex="0">Recommend this title to the library</h1>
+    </div>
+
+    <div class="modal-container RecommendModal-container" role="dialog">
+        <div class="medium-4 columns no-padding-left">
+            <img data-id="cover-image" src="" alt="Cover image"/>
+        </div>
+
+        <form id="recommend-dynamic-form" class="js-recommendations-form" data-abide="ajax" data-media-id="">
+            <div class="medium-8 columns RecommendModal-inputContainer">
+
+                <h2 data-first-focus tabindex="0" class="RecommendModal-title" data-id="title"></h2>
+                <h3 tabindex="0" class="RecommendModal-author js-recommend-modal-author" data-id="author"></h3>
+
+                <span class="title-format-badge RecommendModal-formatBadge"><i data-id="format-icon" class=""></i> <span tabindex="0" data-id="format-name"></span></span>
+
+                <p class="RecommendModal-label">
+                    If this title is purchased:
+                </p>
+
+                <input type="radio" class="js-recommend-checkbox check" name="onWaitList" value="true" id="on-wait-list" checked>
+                <label class="RecommendModal-inputLabel" for="on-wait-list"><span class="RecommendModal-inputLabel-text">Place me on its wait list and email me when my hold is available.</span></label>
+
+                <input type="radio" class="js-recommend-checkbox check" name="onWaitList" value="false" id="off-wait-list">
+                <label class="RecommendModal-inputLabel" for="off-wait-list"><span class="RecommendModal-inputLabel-text">Notify me by email but don&#39;t place me on its wait list.</span></label>
+
+                <input id="email-dynamic-recommend" class="RecommendModal-emailInput js-recommend-email" placeholder="Email address" title="Email address" aria-label="Email address" type="email" required />
+                <small class="error">Email address is required and must match.</small>
+
+                <input type="email" id="email-conf-dynamic-recommended" class="RecommendModal-emailInput js-recommend-email" placeholder="Confirm email address" title="Confirm email address" aria-label="Confirm email address" required data-equalto="email-dynamic-recommend" />
+                <small class="error">Both email addresses must match.</small>
+            </div>
+
+            <div class="button-container">
+                <button data-style="zoom-out" tabindex="0" type="submit" id="place-recommend" class="button radius secondary RecommendModal-submit js-recommendation-submit" aria-label="Recommend this title">
+                    <span class="u-allCaps RecommendModal-submitText">Recommend this title</span>
+                </button>
+
+                <button type="button" data-cancel class="button radius outline gray cancel RecommendModal-cancel u-allCaps">Cancel</button>
+            </div>
+            <input type="hidden" class="js-recommend-csrf" id="csrf" name="_csrf" value="QtnDipQ7-lybExw98A4nsabbe8ZKZCD6L3-4">
+        </form>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="" role="button" aria-label="" tabindex="0">&#215;</a>
+</div>
+
+    <div role="dialog" id="recommendation-success" class="reveal-modal small RecommendSuccessModal js-recommendation-success-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+
+    <h1 id="modalTitle" class="RecommendSuccessModal-header js-first-focus" data-first-focus tabindex="0">Thank you for your recommendation!</h1>
+
+    <div class="modal-container RecommendSuccessModal-container" role="dialog">
+        <p id="availability-label" class="RecommendSuccessModal-label" tabindex="0">
+            <span class="js-recommend-option-text"></span><br/><br/>
+
+            <span class="js-recommend-success-related-text">Here are a few titles already in our collection that you may like:</span>
+        </p>
+
+        <ul class="RecommendSuccessModal-titles js-recommend-success-title-container js-relatedTitles">
+
+        </ul>
+
+        <a class="button primary RecommendSuccessModal-seeAllButton js-recommendation-modal-see-all-link radius u-allCaps" href="">More titles you may like</a>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" role="button" id="close-availability" tabindex="0" aria-label="Close">&#215;</a>
+</div>
+
+    <div role="dialog" id="recommendation-limit-modal" class="reveal-modal small js-recommendation-limit-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-header">
+        <h1 class="modal-title primary-color u-allCaps" id="modalTitle">Recommendation limit reached</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <p id="recommendation-limit-label" data-first-focus tabindex="0" class="js-first-focus">
+            You&#39;ve reached the maximum number of titles you can currently recommend.<br/>
+        </p>
+
+        <div class="button-container">
+            <button type="button" data-cancel class="button radius margin-small outline u-allCaps">ok</button>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" role="button" id="close-no-return" tabindex="0" aria-label="Close">&#215;</a>
+</div>
+
+
+        </div>
+
+        
+            <div class="footer-desktop">
+                <footer>
+    
+    
+    
+    
+    
+    
+
+    
+        
+        
+    
+
+    <div class="row footer" aria-hidden="false" id="footer">
+        <div class="large-3 small-6 columns" tabindex="0" role="list" aria-labelledby="myaccount">
+            
+                <h6 class="footer-heading u-allCaps">My account</h6>
+                <a href="/account/sign-in" id="footer-account-sign-in" data-forward>
+                    Sign in
+                </a>
+                <br/>
+                
+                    <a href="/support/card">Need a library card?</a><br/>
+                
+                
+            
+        </div>
+
+        <div class="large-3 small-6 columns" tabindex="0" aria-labelledby="help" role="list">
+            <h6 class="footer-heading u-allCaps" id="help">Help</h6>
+            <div class="footer-links">
+                <ul>
+                    <li role="listitem"><a target="_blank" href="http://help.overdrive.com/customer/portal/articles/2145737?Key=minuteman&edge=true" id="footer-help-getting-started">
+                        New site FAQs
+                    </a></li>
+                    <li role="listitem"><a target="_blank" href="http://help.overdrive.com/customer/portal/articles/1481729-getting-started-with-overdrive?Key=minuteman&edge=true" id="footer-help-getting-started">
+                        Getting started
+                    </a></li>
+                    <li role="listitem"><a target="_blank" href="http://help.overdrive.com/customer/portal/articles/1481728-get-help-with-the-overdrive-app?Key=minuteman&edge=true" id="footer-help-od-app">
+                        OverDrive app
+                    </a></li>
+                    <li role="listitem"><a target="_blank" href="http://help.overdrive.com/?Key=minuteman&edge=true#devices" id="footer-help-devices">
+                        Devices
+                    </a></li>
+                    <li role="listitem"><a target="_blank" href="http://help.overdrive.com/customer/portal/articles/1481730-having-trouble-?Key=minuteman&edge=true" id="footer-help-troubleshooting">
+                        Troubleshooting
+                    </a></li>
+                    <li role="listitem"><a id="footer-help-support" data-reveal-id="support-choice-modal" href="#">
+                        Get support
+                    </a></li>
+                    
+                        <li role="listitem"><a target="_blank" id="footer-help-support" href="https://www.surveygizmo.com/s3/3039923/New-OverDrive-Patron-Survey-Ongoing-Wave-3-September-2016">
+                            Feedback
+                        </a></li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="large-3 small-6 columns" aria-labelledby="stay-connected" role="list" tabindex="0">
+            <h6 class="footer-heading u-allCaps" id="stay-connected">Stay connected</h6>
+            
+                <a class="member-libraries-desktop" href="/support/members">Member libraries</a>
+            
+            
+                <p>
+                
+                
+                
+                
+                </p>
+            
+        </div>
+        
+
+        
+
+        <div class="large-3 small-6 columns">
+            <div class="footer-right right">
+                <div class="PoweredBy">
+                    <span class="PoweredBy-text PoweredBy-text--prefix">powered by</span>
+                    <span><a aria-label="Powered by OverDrive" target="_blank" id="footer-overdrive" href="http://company.overdrive.com/libraries/"><i class="PoweredBy-logo icon-overdrive" title="Powered by OverDrive" aria-hidden="true"></i></a></span>
+                    <span class="PoweredBy-text PoweredBy-text--suffix"></span>
+                </div>
+                <span><a aria-label="Google Play Store" target="_blank" id="footer-store-google" href="https://play.google.com/store/apps/details?id=com.overdrive.mobile.android.mediaconsole"><i class="icon-android" title="Google Play Store" aria-hidden="true"></i></a></span>
+                <span><a aria-label="Apple App Store" target="_blank" id="footer-store-apple" href="https://itunes.apple.com/us/app/overdrive-media-console-library/id366869252?mt=8"><i class="icon-apple" title="Apple App Store" aria-hidden="true"></i></a></span>
+                <span><a aria-label="Windows Store" target="_blank" id="footer-store-windows" href="http://www.windowsphone.com/en-us/store/app/overdrive-media-console/637433e5-1392-e011-9210-002264c2fb72"><i class="icon-windows" title="Windows Store" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+
+        <hr class="dark"/>
+
+        <div class="large-12 columns" role="list" aria-labelledby="copyright" tabindex="0">
+            <p class="copyright" id="copyright">
+                © 2016 OverDrive, Inc. All Rights Reserved.
+                <a target="_blank" role="listitem" href="http://company.overdrive.com/privacy-policy/?_ga=1.204235286.78696bce-4a65-4200-9717-41e3afccaa21">Privacy Policy</a>
+                &middot;
+                <a target="_blank" role="listitem" href="http://company.overdrive.com/copyright/?_ga=1.204235286.78696bce-4a65-4200-9717-41e3afccaa21">Important Notice about Copyrighted Materials</a>
+                
+            </p>
+        </div>
+
+        <!-- Support Choice Modal -->
+<div id="support-choice-modal" class="support-choice-modal reveal-modal medium" data-reveal aria-hidden="true" >
+    <div class="modal-header">
+        <h1 class="modal-title primary-color" id="cancel-hold-modal-title">Support</h1>
+    </div>
+
+    <div class="modal-container" role="dialog" aria-describedby="cancel-label">
+        <div class="row">
+            <div class="large-6 columns text-center support-choice-separator">
+                <p class="bold support-choice-label js-first-focus" tabindex="0" data-first-focus>
+                    Looking for help? We have getting started guides, videos, how-to articles, troubleshooting tips, and more on OverDrive Help.
+                </p>
+
+                <a href="http://help.overdrive.com/customer/portal/articles/2145737?Key=minuteman&edge=true"
+                   target="_blank" class="button margin-small radius secondary support-choice-button u-allCaps" aria-label="Contact support Contact support">
+                    Visit help site
+                </a>
+            </div>
+
+            <div class="large-6 columns text-center">
+                <p class="bold support-choice-label" tabindex="0">
+                    Can&#39;t find an answer on OverDrive Help, or need more assistance?
+                </p>
+
+                
+                    <a href="/support/members" class="button margin-small radius secondary support-choice-button u-allCaps"
+                       tabindex="0" aria-label="Visit help site">
+                        Contact support
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="" aria-label="Close" role="button" tabindex="0">&#215;</a>
+</div>
+
+    </div>
+</footer>
+
+            </div>
+
+            <div class="footer-mobile">
+                <footer>
+    <div class="row footer mobile" aria-hidden="false" id="footer">
+        <ul class="accordion footer-accordion" data-accordion>
+            
+                <li class="mobile-footer-sign-in">
+                    <a href="/account/sign-in" class="u-allCaps" id="footer-account-sign-in-mobile" data-forward>
+                        Sign in
+                    </a>
+                </li>
+            
+
+            
+            <li class="mobile-footer-sign-in">
+                <a href="/support/card" class="u-allCaps">Need a library card?</a>
+            </li>
+            
+
+            <li class="accordion-navigation">
+                <a href="#panel-help" class="u-allCaps">Help <i class="icon-forward-arrow right chevron" aria-hidden="true"></i></a>
+                <div id="panel-help" class="content">
+                    <ul>
+                        <li role="listitem"><a target="_blank" href="http://help.overdrive.com/customer/portal/articles/2145737?Key=minuteman&edge=true" id="footer-help-getting-started">
+                            New site FAQs
+                        </a></li>
+                        <li role="listitem"><a target="_blank" href="http://help.overdrive.com/customer/portal/articles/1481729-getting-started-with-overdrive?Key=minuteman&edge=true" id="footer-help-getting-started">
+                            Getting started
+                        </a></li>
+                        <li role="listitem"><a target="_blank" href="http://help.overdrive.com/customer/portal/articles/1481728-get-help-with-the-overdrive-app?Key=minuteman&edge=true" id="footer-help-od-app">OverDrive app</a></li>
+                        <li class="show-for-medium-down" role="listitem"><a target="_blank" href="http://help.overdrive.com/?Key=minuteman&edge=true#devices" id="footer-help-devices">
+                            Devices
+                        </a></li>
+                        <li role="listitem"><a target="_blank" href="http://help.overdrive.com/customer/portal/articles/1481730-having-trouble-?Key=minuteman&edge=true" id="footer-help-troubleshooting">Troubleshooting</a></li>
+                        <li role="listitem"><a id="footer-help-support" data-reveal-id="support-choice-modal" href="#">
+                            Get support
+                        </a></li>
+                        
+                            <li role="listitem"><a target="_blank" id="footer-help-support" href="https://www.surveygizmo.com/s3/3039923/New-OverDrive-Patron-Survey-Ongoing-Wave-3-September-2016">
+                                Feedback
+                            </a></li>
+                        
+                    </ul>
+                </div>
+            </li>
+
+            <li class="accordion-navigation">
+                <a href="#panel-stay-connected" class="u-allCaps">Stay connected <i class="icon-forward-arrow right chevron" aria-hidden="true"></i></a>
+                <div id="panel-stay-connected" class="content">
+                    <ul>
+                        <li role="listitem">
+                            
+                                <a href="/support/members">
+                                    Member libraries
+                                </a>
+                            
+                        </li>
+
+                        
+
+                        
+
+                        
+
+                        
+                    </ul>
+                </div>
+            </li>
+
+            
+
+            
+        </ul>
+    </div>
+
+    <div class="small-12 columns footer-mobile-element">
+        <div class="footer-right text-center">
+            <div class="PoweredBy">
+                <span class="PoweredBy-text PoweredBy-text--prefix">powered by</span>
+                <span><a aria-label="Powered by OverDrive" target="_blank" id="footer-overdrive" href="http://company.overdrive.com/libraries/"><i class="PoweredBy-logo icon-overdrive" title="Powered by OverDrive" aria-hidden="true"></i></a></span>
+                <span class="PoweredBy-text PoweredBy-text--suffix"></span>
+            </div>
+            <div class="Footer-iconContainer">
+                <a aria-label="Google Play Store" target="_blank" id="footer-store-google" class="Footer-icon" href="https://play.google.com/store/apps/details?id=com.overdrive.mobile.android.mediaconsole">
+                    <i class="icon-android" title="Google Play Store" aria-hidden="true"></i>
+                </a>
+                <a aria-label="Apple App Store" target="_blank" class="Footer-icon" href="https://itunes.apple.com/us/app/overdrive-media-console-library/id366869252?mt=8">
+                    <i class="icon-apple" title="Apple App Store" aria-hidden="true"></i>
+                </a>
+                <a aria-label="Windows Store" target="_blank" id="footer-store-windows" class="Footer-icon" href="http://www.windowsphone.com/en-us/store/app/overdrive-media-console/637433e5-1392-e011-9210-002264c2fb72">
+                    <i class="icon-windows" title="Windows Store" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-12 columns footer-mobile-element text-center" role="list" aria-labelledby="copyright" tabindex="0">
+        <p class="copyright" id="copyright">
+            © 2016 OverDrive, Inc. All Rights Reserved.
+            <br/>
+            <a target="_blank" role="listitem" href="http://company.overdrive.com/privacy-policy/?_ga=1.204235286.78696bce-4a65-4200-9717-41e3afccaa21">Privacy Policy</a>
+            &middot;
+            <a target="_blank" role="listitem" href="http://company.overdrive.com/copyright/?_ga=1.204235286.78696bce-4a65-4200-9717-41e3afccaa21">Important Notice about Copyrighted Materials</a>
+            
+        </p>
+    </div>
+
+    <!-- Support Choice Modal -->
+<div id="support-choice-modal" class="support-choice-modal reveal-modal medium" data-reveal aria-hidden="true" >
+    <div class="modal-header">
+        <h1 class="modal-title primary-color" id="cancel-hold-modal-title">Support</h1>
+    </div>
+
+    <div class="modal-container" role="dialog" aria-describedby="cancel-label">
+        <div class="row">
+            <div class="large-6 columns text-center support-choice-separator">
+                <p class="bold support-choice-label js-first-focus" tabindex="0" data-first-focus>
+                    Looking for help? We have getting started guides, videos, how-to articles, troubleshooting tips, and more on OverDrive Help.
+                </p>
+
+                <a href="http://help.overdrive.com/customer/portal/articles/2145737?Key=minuteman&edge=true"
+                   target="_blank" class="button margin-small radius secondary support-choice-button u-allCaps" aria-label="Contact support Contact support">
+                    Visit help site
+                </a>
+            </div>
+
+            <div class="large-6 columns text-center">
+                <p class="bold support-choice-label" tabindex="0">
+                    Can&#39;t find an answer on OverDrive Help, or need more assistance?
+                </p>
+
+                
+                    <a href="/support/members" class="button margin-small radius secondary support-choice-button u-allCaps"
+                       tabindex="0" aria-label="Visit help site">
+                        Contact support
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="" aria-label="Close" role="button" tabindex="0">&#215;</a>
+</div>
+
+</footer>
+
+            </div>
+
+            <!-- authenticate Modal -->
+<div id="authenticate-modal" class="authenticate-modal reveal-modal small" data-reveal aria-hidden="true">
+    <div class="modal-header">
+        <h1 class="modal-title primary-color" id="authenticate-modal-title">Session expired</h1>
+    </div>
+
+    <div class="modal-container" role="dialog" aria-describedby="authenticate-label">
+        <p id="authenticate-label js-first-focus" data-first-focus tabindex="0">
+            Your session has expired. Please sign in again so you can continue to borrow titles and access your Loans, Wish list, and Holds pages.
+        </p>
+
+        <div class="button-container">
+            <a data-reauthenticate href="" role="button" class="button margin-small radius secondary u-allCaps" aria-label="Sign in">
+                Sign in
+            </a>
+            <button type="button" data-cancel class="button radius margin-small outline gray cancel u-allCaps">Cancel</button>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" role="button" href="" aria-label="Close" tabindex="0">&#215;</a>
+</div>
+
+            <!-- Link Card Modal -->
+<div role="dialog" id="link-card-modal" class="link-card-modal reveal-modal small" data-reveal aria-labelledby="link-card-modal-title" aria-hidden="true" >
+    <div class="modal-header">
+        <h1 class="modal-title primary-color u-allCaps" id="link-card-modal-title">Add a library card</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <p tabindex="0" data-first-focus class="js-first-focus">
+            To borrow titles, place holds, or add titles to your wish list, you’ll need to add a library card to your OverDrive account.
+        </p>
+
+        <div class="button-container">
+            <a href="/account/initiate-card-link" id="add-card-button" class="button margin-small radius secondary u-allCaps" aria-label="Add a library card" data-forward>Add a card</a>
+            <button type="button" data-cancel class="button radius margin-small outline gray cancel u-allCaps" id="cancel-button">Cancel</button>
+        </div>
+    </div>
+
+    
+        <div class="modal-footer">
+            <div class="row">
+                <div class="columns large-12 library-card-sign-up-container">
+                    <div class="row">
+                        <i class="icon icon-card secondary-color modal"></i>
+                    </div>
+                    <div class="library-card-sign-up row">
+                        <div>
+                            <h2>Need a library card?</h2>
+                            <span>
+                                <a href="/support/card" class="secondary-color" aria-label="Learn how to get a library card from Minuteman Library Network.">Learn how to get one here.</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <a class="close-reveal-modal js-last-focus" href="" aria-label="Close" role="button" tabindex="0">&#215;</a>
+</div>
+
+            <!-- Link Card Modal -->
+<div role="dialog" id="card-error-modal" class="js-card-error-modal reveal-modal small" data-reveal aria-labelledby="card-error-modal-title" aria-hidden="true" >
+    <div class="modal-header">
+        <h1 class="modal-title primary-color u-allCaps" id="card-error-modal-title">Card error</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <p tabindex="0" data-first-focus class="js-first-focus">
+            The library card you previously added can&#39;t be used to complete this action. Please add your card again, or add a different card. If you receive an error message, please contact your library for help. 
+        </p>
+
+        <div class="button-container">
+            <a href="/account/initiate-card-link" id="add-card-button" class="button margin-small radius secondary u-allCaps" aria-label="Card error" data-forward>Add a card</a>
+
+            
+                <a href="/support/members" class="button margin-small radius secondary support-choice-button u-allCaps"
+                   tabindex="0" aria-label="Contact support">
+                    Contact support
+                </a>
+            
+
+            <button type="button" data-cancel class="button radius margin-small outline gray cancel u-allCaps" id="cancel-button">Cancel</button>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="" aria-label="Close" role="button" tabindex="0">&#215;</a>
+</div>
+
+            <!--
+    data-id="title" = The title of the media
+    data-id="cover-image" = The src of the cover image to display
+    data-media-id="" = Set this to the id of the media to hold
+-->
+<div role="dialog" id="now-available-modal" class="reveal-modal small" data-reveal aria-labelledby="now-available-modal-title" aria-hidden="true">
+    <div class="modal-header text-center">
+        <h1 class="modal-title primary-color" id="now-available-modal-title">Good news!</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <div class="medium-12 medium-centered columns text-center title-text js-first-focus" data-first-focus tabindex="0">
+            <b><span data-id="title"></span></b> is currently available.
+        </div>
+
+        <div class="large-6 large-centered medium-7 medium-centered small-8 small-centered columns img-container">
+            <img data-id="cover-image" src="" alt="Cover image"/>
+        </div>
+
+        <div class="now-available-button-container">
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                    
+    
+        <div class="borrowButton no-auth below-600-full-width js-action-button-container LendingPeriods">
+            <a data-spinner-button data-style="zoom-out" role="button"
+               class="button radius-left big margin-small lending-options no-auth-borrow secondary below-600-full-width action-button"
+               id="submit-borrow" href="/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher&action=borrow~" tabindex="0">
+                <span class="u-allCaps">Borrow</span>
+            </a>
+
+            <button data-lending-period-dropdown data-media-id="" aria-label="Select lending period."
+                    aria-haspopup="true" aria-expanded="false" aria-controls="lending-period-options-" role="button"
+                    class="button dropdown LendingPeriods-lendingPeriodButton js-lending-period-dropdown-button lending-period-dropdown secondary radius-right no-sample">
+            </button>
+            <ul role="menu" id="lending-period-options-" class="LendingPeriods-lendingPeriodList is-link js-lending-period-list signin-dropdown"
+                aria-hidden="false" aria-haspopup="true" data-id=""></ul>
+        </div>
+    
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                    <a type="button" data-cancel class="button big radius margin-small cancel u-allCaps" tabindex="0">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="javascript:void(0)" role="button" aria-label="Close" tabindex="0">&#215;</a>
+</div>
+            <!--
+    data-id="title" = The title of the media
+    data-id="cover-image" = The src of the cover image to display
+    data-media-id="" = Set this to the id of the media to hold
+-->
+<div role="dialog" id="now-unavailable-modal" class="reveal-modal small" data-reveal aria-labelledby="now-unavailable-modal-title" aria-hidden="true">
+    <div class="modal-header text-center">
+        <h1 class="modal-title primary-color" id="now-unavailable-modal-title">We&#39;re sorry!</h1>
+    </div>
+
+    <div class="modal-container" role="dialog">
+        <div class="medium-12 medium-centered columns text-center title-text js-first-focus" data-first-focus tabindex="0">
+            <b><span data-id="title"></span></b> is not currently available. You can place a hold on it instead and get an email when it's available for you.
+        </div>
+
+        <div class="large-6 large-centered medium-7 medium-centered small-8 small-centered columns img-container">
+            <img data-id="cover-image" src="" alt="Cover image"/>
+        </div>
+
+        <div class="now-unavailable-button-container">
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                    
+    <a data-spinner-button data-style="zoom-out" role="button" href="/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher&action=hold~"
+       class="button radius big margin-small secondary below-600-full-width action-button place-a-hold u-allCaps Button-holdButton no-sample" tabindex="0">
+        Place a hold
+    </a>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                    <a type="button" data-cancel class="button big radius margin-small cancel u-allCaps" tabindex="0">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="close-reveal-modal js-last-focus" href="javascript:void(0)" role="button" aria-label="Close" tabindex="0">&#215;</a>
+</div>
+        
+
+        <script src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/js/translations/en.js?8e65901835" type="text/javascript"></script>
+        <script src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/js/bundles/app.js?0fdba145da" type="text/javascript"></script>
+
+        <script>
+            Foundation.global.namespace = '';
+            // Run foundation js dependencies
+            $(document).foundation({
+                abide: {
+                    live_validate: false,
+                    focus_on_invalid : false,
+                    validate_on_blur : false,
+                    patterns: {
+                        email: /^([a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)$/
+                    },
+                    equalizer: {
+                        equalize_on_stack: true
+                    }
+                }
+            });
+        </script>
+
+        
+    <script src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/js/bundles/rtl_preview.bundle.min.js?757a15b5fe"></script>
+    <script src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/js/bundles/rtl_success_modal.bundle.min.js?8896dcc34b" type="text/javascript"></script>
+
+    <script>
+        if("[object Object]" == null || "[object Object]" == "") {
+            $('#noresults').focus();
+        }
+
+        var query = getQueryParams(window.location.search);
+        var sortByElem = $('.js-searchSortByOptions');
+
+        if(query.sortBy) {
+            sortByElem.val(query.sortBy);
+        }
+
+        sortByElem.on('change', function() {
+            replaceQueryParam('sortBy', $(this).val());
+        });
+
+        isListViewEnabled = true;
+
+        
+            $('a.view-as-grid, a.view-as-list').css('display', 'inline-block');
+        
+        
+        
+    </script>
+
+    
+        <script>
+            $('.media-container.loading').css('display', 'none');
+            setViewPreference();
+            alignContextMenu();
+
+            $(document).ready(function() {
+                setTimeout(function() {
+                    $(document).trigger('resultsLoadedNoAuth');
+                }, 200);
+            });
+        </script>
+    
+
+
+
+        <script>
+            
+
+            function closeNav(e) {
+                var desktopContainer = $(".drop.content.open");
+                var mobileContainer = $('.mobile-nav-menu[data-menu]');
+
+                //Close Desktop
+                if (!desktopContainer.is(e.target) && desktopContainer.has(e.target).length === 0){
+                    $(document).foundation('dropdown', 'close', $('.drop.content.open'));
+                    $('li[data-dropdown]').attr('aria-expanded', 'false');
+                }
+
+                //Close mobile
+                if (!mobileContainer.is(e.target) && mobileContainer.has(e.target).length === 0){
+                    if ($('.mobile-nav-wrapper').hasClass('expanded')) {
+                        $('.mobile-nav-menu[data-menu]').toggle();
+                        $('.mobile-nav-wrapper').removeClass('expanded').addClass('unexpanded');
+                        $('.top-bar').removeClass('expanded').addClass('unexpanded');
+                        toaster._stickToast();
+                    }
+                }
+            }
+
+            //Hide nav when clicked outside of it
+            $(document).on("click tap", function(e){
+                closeNav(e);
+            });
+
+            //Fix for issue with dropdown not closing upon clicking parent link
+            $('li[data-dropdown]').on( "tap", function(e){
+                $('li[data-dropdown]').attr('aria-expanded', 'false');
+                e.stopImmediatePropagation();
+                e.preventDefault();
+            });
+
+            $(document).ready(function(e) {
+                var URL = window.location.search.slice(1);
+                var errorMessage = 'errorMessage';
+                var successMessage = 'successMessage';
+                var error = false;
+                var success = false;
+
+                if(URL.indexOf('errorMessage') > -1) {
+                    error = true;
+                } else if (URL.indexOf('successMessage') > -1) {
+                    success = true;
+                }
+
+                if(error || success) {
+                    if (URL.indexOf('&') > -1) {
+                        URL = URL.split('&');
+                        _.each(URL, function (URLee) {
+                            if (URLee.indexOf(errorMessage) > -1) {
+                                errorMessage = URLee.slice(errorMessage.length += 1);
+                            } else if (URLee.indexOf(successMessage) > -1) {
+                                successMessage = URLee.slice(successMessage.length += 1);
+                            }
+                        });
+                    } else {
+                        if(error) {
+                            errorMessage = URL.slice(errorMessage.length += 1);
+                        } else {
+                            successMessage = URL.slice(successMessage.length += 1);
+                        }
+                    }
+                }
+
+                if (success) {
+                    var copy = window.html('toastSuccess');
+                    var html = '<strong>' + copy + '</strong> ' + decodeURIComponent(successMessage);
+                    
+                    toaster.push(html, 'message');
+                }
+
+                var cookies = ("cookie" in document && (document.cookie.length > 0 ||
+                (document.cookie = "test").indexOf.call(document.cookie, "test") > -1));
+
+                // If no cookie support: warn the user with a toast
+                if (!cookies) {
+                    
+
+                    
+                    toaster.push('<strong>Error!</strong>' + html('toasts.cookiesMustBeEnabled',
+                        {link1: '<a href="http://help.overdrive.com/customer/portal/articles/1481652-how-to-enable-cookies-on-your-computer?Key="' + libraryKey + sup + '">how to enable cookies on a computer</a>',
+                         link2: '<a href="http://help.overdrive.com/customer/portal/articles/1481678-how-to-enable-cookies-on-your-mobile-device?Key="' + libraryKey + sup + '">how to enable cookies on a mobile device</a>'}), 'error');
+                }
+
+                
+
+                var $desktopAccountButton = $('#account-holder-name');
+                var $mobileAccountButton = $('li.account-dropdown-mobile a i.icon-account');
+
+                
+                    
+                        // The account button is currently configured so that a click will popup the "more titles may be
+                        // available to you" dropdown.  In some cases we want to simulate a click now so it shows up;
+                        // later this behavior will be overwritten so they're sent to account sign in instead of
+                        // toggling the dropdown.
+
+                        if (Cookies.get('advantage-dismissed') == null) {
+                            // cause the advantage dropdown to trigger
+                            if ($desktopAccountButton.is(':visible') && $desktopAccountButton.hasClass('signed-out')) {
+                                $desktopAccountButton.click();
+                            }
+                        }
+                    
+
+                    // intercept the account button click to navigate instead of toggle the advantage dropdown
+                    $desktopAccountButton.add($mobileAccountButton).on('click', function(e) {
+                        e.stopPropagation();
+
+                        window.location = '/account/sign-in?forward=%2Fsearch%3Fquery%3Dcold%2Bdays%2Bjim%2Bbutcher%26openAccountMenu%3Dtrue';
+                    });
+                
+            });
+
+            var systemMsgArr = [];
+            
+                
+                    
+                    
+                
+            
+
+            var euCookieSetting = Cookies.get('eu-notify-setting');
+            if(euCookieSetting != undefined && euCookieSetting != 1) {
+                if($('.js-toastMessage').length == 0) {
+                    systemMsgArr.push({
+                        message: 'This site uses cookies. <a id="eu-notify-setting-toast" onclick="getCookieExplanation()">Learn more about cookies.</a>',
+                        toasterType: 'system',
+                        id: 'eu-notify-toast'
+                    });
+                }
+            }
+            toaster.bulkSystemMsgPush(systemMsgArr);
+
+            
+
+            $('img').one('error', function() {
+                this.src = 'https://lightning.od-cdn.com/8.2.0.453-hotfix/public/img/no-cover_en_US.jpg?1447223746';
+            });
+
+            //Set body attributes for tracking authentication and available linked cards.
+            if (false && false) {
+                $('body').attr({'authenticated': true, 'no-linked-cards': false});
+            } else if (false && !false) {
+                $('body').attr({'authenticated': false, 'no-linked-cards': true});
+            } else {
+                $('body').attr({'authenticated': false, 'no-linked-cards': false});
+            }
+
+            //Add loading gif here to be used in javascript. Needs the swig cdn parameters for caching
+            var primaryActionLoadingGif = '<img src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/img/loading.gif?aae63449b3">';
+            if(Cookies.get('high-contrast-setting') == 1) {
+                primaryActionLoadingGif = '<img src="https://lightning.od-cdn.com/8.2.0.453-hotfix/public/img/loading-contrast.gif?68d4cccb16">';
+            }
+        </script>
+
+        
+        
+    </body>
+</html>

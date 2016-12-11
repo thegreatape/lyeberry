@@ -1,61 +1,64 @@
 (ns lyeberry.overdrive
   (:use lyeberry.html-utils)
   (:require [net.cgrand.enlive-html :as html]
-            [clj-http.client :as client]))
+            [clj-http.client :as client]
+            [cheshire.core :as cheshire]))
 
 (def bpl-host
-  "http://overdrive.bpl.org")
+  "https://bpl.overdrive.com")
 
 (def minuteman-host
-  "http://digital.minlib.net")
+  "https://minuteman.overdrive.com")
 
 (defn search-url
   [root]
-  (str root "BANGSearch.dll?Type=FullText&PerPage=24&URL=SearchResultsList.htm"))
-
-(defn site-root
-  [host]
-  "Get the site's base for a new session; Overdrive sites appear to place this
-  in the url and require it."
-  (let [url (last (:trace-redirects (client/get host)))]
-    (clojure.string/replace url #"[^/]+$" "")))
-
+  (str root "/search"))
 
 (defn search-params
   [book]
-  {:Sort "SortBy=Relevancy"
-   :FullTextField "All"
-   :FullTextCriteria (str (:title book) " " (:author book))})
+  {:query (-> (str (:title book) " " (:author book))
+              (clojure.string/replace "%" "")
+              (clojure.string/replace "?" ""))})
 
 (defn search-results
   [book host]
-  (let [search-post (client/post
-                      (search-url (site-root host))
-                      {:form-params (search-params book)})]
-   (:body
-    (client/get
-      (str host (get (:headers search-post) "Location"))))))
+  (let [response (client/get
+                   (search-url host)
+                   {:query-params (search-params book)})]
+    (:body response)))
+
+(defn media-item-json
+  [response]
+  (-> (re-find #"window.OverDrive.mediaItems =(.*);\s*\n" response)
+      last
+      (cheshire/parse-string true)))
 
 (defn extract-copy
-  [result-node]
-  {:title (text-at result-node [:.trunc-title-line-list])
-   :author (text-at result-node [:.trunc-author-line-list])
-   :url (:href (:attrs (first (html/select result-node [:.trunc-title-line-list :a]))))
-   :status (text-at result-node [:.trunc-avail-copies-list]) })
-
-(defn annotate-copy
-  [root copy]
-  (merge copy {:location "" :call_number "" :url (str root (:url copy))} ))
+  [host [id copy-json]]
+  {:title (:title copy-json)
+   :author (:firstCreatorName copy-json)
+   :url (str host "/media/" (name id))
+   :status (str "Available Copies: "
+                (:availableCopies copy-json)
+                " of "
+                (:ownedCopies copy-json)
+                " ("
+                (:holdsCount copy-json)
+                " holds)")
+   :location ""
+   :call_number ""
+   })
 
 (defn extract-books
-  [page-html]
-  (map extract-copy (select-from-html-string page-html [:.searchResultRow])))
+  [book-json host]
+  (map (partial extract-copy host) book-json))
 
 (defn copies
   [host book]
-  (map
-    #(annotate-copy (site-root host) %1)
-    (extract-books (search-results book host))))
+  (-> book
+      (search-results host)
+      media-item-json
+      (extract-books host)))
 
 (defn minuteman-copies
   [book]
